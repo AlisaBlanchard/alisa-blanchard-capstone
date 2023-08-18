@@ -14,7 +14,7 @@ nav {
         width: 4rem;
         position: absolute;
         right: 6.3rem;
-        margin-top: 1rem;
+        top: 0.5rem;
     }
     
     .header_nav {
@@ -24,12 +24,45 @@ nav {
         padding: 0;
 
         li {
-            text-decoration: none;
             list-style: none;
-            color: variables.$primary-background-color;
-            font-weight: bold;
-            font-size: 15px;
-            margin: 0 2rem 0 2rem;
+
+            a {
+                text-decoration: none;
+                color: variables.$primary-background-color;
+                font-weight: bold;
+                font-size: 15px;
+                margin: 0 2rem 0 2rem;
+                }
+        }
+    }
+    @include tablet {
+        height: 5.5rem;
+
+        .logo {
+            position: static;
+            margin: 1.5rem 0 0 3.5rem;
+            height: 6rem;
+            width: 5rem;
+    
+        }
+
+        .header_nav {
+            justify-content: flex-end;
+            margin-right: 2rem;
+        }
+    }
+
+    @include desktop {
+        padding: 0 3rem 0 3rem;
+
+        .header_nav {
+
+            li {
+                a {
+                    font-size: 22px;
+                }
+            }
+    
         }
     }
 }
