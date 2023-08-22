@@ -35,17 +35,17 @@ function UserProfile() {
     return (
         <section className="userProfile">
             <div className="user__wrap">
-                <img src="#" alt="Profile Picture" />
+            <h1>Username {details.username}</h1>
+                <div src="#" alt="Profile Picture" className='user__img' />
                 <div className="user__info">
-                    {/* <p>Username: {details.username}</p>
                     <p>Name: {details.name}</p>
                     <p>Birthday: {details.birthdate}</p>
-                    <p>Sessions: {details.tracking_sessions}</p> */}
+                    <p>Sessions: {details.tracking_sessions}</p>
                 </div>
             </div>
             <div className="data__wrap">
-                <div className="tracker__dropdown">tracker dropdown</div>
-                <div className="data__button">Data Visualization Button</div>
+                <div className="tracker__dropdown">Tracker Dropdown</div>
+                <div className="data__button">See My Data</div>
                 <div className="data__visualizer">CHARTS</div>
             </div>
         </section>

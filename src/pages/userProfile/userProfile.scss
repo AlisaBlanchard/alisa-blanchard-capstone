@@ -2,3 +2,76 @@
 @use '../../styles/variables';
 
 //UserProfile Styling
+
+.userProfile {
+    background-color: variables.$primary-background-color;
+
+    .user__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 2rem 2rem 2rem;
+
+        h1 {
+            color: variables.$primary-text-color;
+            text-align: left;
+            margin-bottom: .5rem;
+        }
+
+        .user__img {
+            background-color: variables.$primary-element-background-color;
+            height: 12rem;
+            width: 12rem;
+            align-self: center;
+            border-radius: 5px;
+
+        }
+
+        .user__info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            background-color: variables.$primary-element-background-color;
+            margin-top: 1rem;
+            border-radius: 5px;
+
+
+
+            p {
+                width: 50%;
+                color: variables.$primary-background-color;
+                margin: .5rem;
+
+            }
+        }
+
+    }
+
+    .data__wrap {
+        display: flex;
+        flex-direction: column;
+        margin: 0 2rem 2rem 2rem;
+
+        .tracker__dropdown {
+            padding: .5rem 1rem;
+            color: variables.$primary-text-color;
+            border-radius: 5px;
+            background-color: variables.$primary-background-color;
+            border: 3px solid variables.$primary-element-background-color;
+        }
+
+        .data__button {
+            margin-top: 1rem;
+            padding: .5rem 1rem;
+            border-radius: 22px;
+            font-weight: bold;
+            color: variables.$primary-background-color;
+            background-color: variables.$primary-element-background-color;
+            text-transform: uppercase;
+        }
+        
+        .data__visualizer {
+            display: none;
+        }
+    }
+}
