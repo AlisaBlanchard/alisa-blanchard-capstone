@@ -1,0 +1,9 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Shop Styling
+
+.shop {
+    color: variables.$primary-background-color;
+
+}

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import UserDashboard from './components/userDashboard/userDashboard';
 import HeaderNav from './components/headerNav/headerNav';
 import UserProfile from './pages/userProfile/userProfile';
+import Shop from './pages/shop/shop';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Route path='/' element={<UserDashboard />} />
           {/* User Profile */}
           <Route path='/profile/:userId' element={<UserProfile />} />
-          <Route path='' element='' />
+          {/* Shop */}
+          <Route path='/shop' element={<Shop />} />
           <Route path='' element='' />
           <Route path='' element='' />
           <Route path='' element='' />
