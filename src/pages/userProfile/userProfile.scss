@@ -10,7 +10,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0 2rem 2rem 2rem;
+        margin: 0 2rem 0 2rem;
+        padding-bottom: 2rem;
 
         h1 {
             color: variables.$primary-text-color;
@@ -18,39 +19,44 @@
             margin-bottom: .5rem;
         }
 
-        .user__img {
-            background-color: variables.$primary-element-background-color;
-            height: 12rem;
-            width: 12rem;
-            align-self: center;
-            border-radius: 5px;
+        .user__info--wrap {
 
-        }
-
-        .user__info {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            background-color: variables.$primary-element-background-color;
-            margin-top: 1rem;
-            border-radius: 5px;
-
-
-
-            p {
-                width: 50%;
-                color: variables.$primary-background-color;
-                margin: .5rem;
-
+            .user__img {
+                background-color: variables.$primary-element-background-color;
+                height: 12rem;
+                width: 12rem;
+                align-self: center;
+                border-radius: 5px;
+    
             }
-        }
+    
+            .user__info {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                background-color: variables.$primary-element-background-color;
+                margin-top: 1rem;
+                border-radius: 5px;
+    
+    
+    
+                p {
+                    width: 50%;
+                    color: variables.$primary-background-color;
+                    margin: .5rem;
+    
+                }
+            }
+            }
+
 
     }
 
     .data__wrap {
         display: flex;
         flex-direction: column;
-        margin: 0 2rem 2rem 2rem;
+        margin: 0 2rem 0 2rem;
+        padding-bottom: 2rem;
 
         .tracker__dropdown {
             padding: .5rem 1rem;
@@ -72,6 +78,100 @@
         
         .data__visualizer {
             display: none;
+        }
+    }
+    @include tablet {
+        .user__wrap {
+    
+            h1 {
+                margin-left: 1.5rem;
+                font-size: 40px;
+            }
+
+            .user__info--wrap {
+                display: flex;
+                flex-direction: row-reverse;
+                
+                .user__img {
+                    margin-right: 2rem;
+                }
+        
+                .user__info {    
+                    margin: 2rem 1.5rem 0 0;
+                    width: 50%;
+                    height: 50%;
+
+                    p {
+                        width: 100%;
+                    }
+                }
+                }
+    
+    
+        }
+    
+        .data__wrap {
+
+            .action__wrap {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 2rem 0 2rem;
+                align-content: center;
+
+                .tracker__dropdown {
+                    // margin-top: 1rem;
+                    height: 1.5rem;
+                    width: 12rem;
+                }
+        
+                .data__button {
+                    margin-top: 0;
+                    width: 12rem;
+                }
+    
+            }
+    
+            
+            .data__visualizer {
+                display: flex;
+                background-color: variables.$primary-element-background-color;
+                margin: 2rem 2rem; 
+                height: 15rem;  
+                border-radius: 5px;
+                color: variables.$primary-background-color;
+                justify-content: center;
+            }
+        }
+    }
+
+    @include desktop {
+        padding: 0 4rem;
+
+        .user__wrap {
+    
+            h1 {
+            }
+
+            .user__info--wrap {
+                justify-content: space-between;
+                
+                .user__img {
+
+                }
+        
+                .user__info {    
+                    margin: 0 1rem 0 1rem;
+                    width: 65%;
+                    height: 12rem;
+                    justify-content: center;
+
+                    p {
+                        margin-left: 2rem;
+                    }
+                }
+                }
+    
+    
         }
     }
 }

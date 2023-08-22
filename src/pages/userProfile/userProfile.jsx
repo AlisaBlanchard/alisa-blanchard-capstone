@@ -36,16 +36,20 @@ function UserProfile() {
         <section className="userProfile">
             <div className="user__wrap">
             <h1>Username {details.username}</h1>
-                <div src="#" alt="Profile Picture" className='user__img' />
-                <div className="user__info">
-                    <p>Name: {details.name}</p>
-                    <p>Birthday: {details.birthdate}</p>
-                    <p>Sessions: {details.tracking_sessions}</p>
+                <div className="user__info--wrap">
+                    <div src="#" alt="Profile Picture" className='user__img' />
+                    <div className="user__info">
+                        <p>Name: {details.name}</p>
+                        <p>Birthday: {details.birthdate}</p>
+                        <p>Sessions: {details.tracking_sessions}</p>
+                    </div>
                 </div>
             </div>
             <div className="data__wrap">
-                <div className="tracker__dropdown">Tracker Dropdown</div>
-                <div className="data__button">See My Data</div>
+                <div className="action__wrap">
+                    <div className="tracker__dropdown">Tracker Dropdown</div>
+                    <div className="data__button">See My Data</div>
+                </div>
                 <div className="data__visualizer">CHARTS</div>
             </div>
         </section>
