@@ -1,3 +1,4 @@
+import ItemCard from '../../components/itemCard/itemCard';
 import '../shop/shop.scss';
 
 //Shop Page 
@@ -10,7 +11,7 @@ function Shop() {
                 <p>Hero Text about quality of life x products you can buy below!</p>
             </div>
             <div className="merch">
-                {/* CARD COMPONENT HERE*/}
+                {<ItemCard />}
                 <div className="card">Item Card 1</div>
                 <div className="card">Item Card 2</div>
             </div>
