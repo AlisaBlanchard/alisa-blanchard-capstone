@@ -1,4 +1,5 @@
 import '../tracker/tracker.scss';
+import TrackerForm from '../../components/trackerForm/trackerForm';
 
 //Tracker Page
 
@@ -13,7 +14,7 @@ function Tracker() {
             <div className="tracker__wrap">
                 <div className="tracker__dropdown">Tracker Selection Dropdown</div>
                     
-                {/* TRACKER COMPONENT */}
+                <TrackerForm />
             </div>
         </section>
     )
