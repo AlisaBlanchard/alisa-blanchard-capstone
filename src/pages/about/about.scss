@@ -1,0 +1,51 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Styling for About Page
+
+.about {
+    background-color: variables.$primary-background-color;
+
+    
+    .hero {
+        background-color: variables.$primary-element-background-color;
+        text-align: left;
+        padding: 1rem;
+
+        h1 {
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: .5rem;
+
+        p {
+            background-color: variables.$primary-element-background-color;
+            font-size: 13px;
+            padding: .5rem;
+            border-radius: 5px;
+        }
+
+        img {
+
+        }
+    }
+
+    .feedback__cta {
+        background-color: variables.$primary-element-background-color;
+        display: flex;
+        margin: .5rem;
+        border-radius: 22px;
+        font-size: 13px;
+
+
+    }
+}

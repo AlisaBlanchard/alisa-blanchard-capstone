@@ -5,6 +5,7 @@ import UserDashboard from './components/userDashboard/userDashboard';
 import HeaderNav from './components/headerNav/headerNav';
 import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
+import About from './pages/about/about';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path='/profile/:userId' element={<UserProfile />} />
           {/* Shop */}
           <Route path='/shop' element={<Shop />} />
-          <Route path='' element='' />
+          <Route path='/about' element={<About />} />
           <Route path='' element='' />
           <Route path='' element='' />
         </Routes>
