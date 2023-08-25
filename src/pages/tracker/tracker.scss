@@ -1,0 +1,40 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Styling for Tracker Page
+
+.tracker {
+    background-color: variables.$primary-background-color;
+    display: flex;
+    flex-direction: column;
+
+    .title__wrap {
+        display: flex;
+        text-align: left;
+        margin: 1rem 0;
+
+        h1 {
+            margin: 0 .5rem 0 .5rem;
+        }
+
+        p {
+            font-size: 13px;
+            flex-wrap: wrap;
+            padding-left: .5rem;
+            border-left: 1px solid variables.$primary-text-color;
+        }
+    }
+
+    .tracker__wrap {
+
+        .tracker__dropdown {
+            background-color: variables.$primary-element-background-color;
+            display: flex;
+            margin: .5rem;
+            border-radius: 22px;
+            font-size: 13px;
+                
+
+        }
+    }
+}

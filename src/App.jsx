@@ -6,6 +6,7 @@ import HeaderNav from './components/headerNav/headerNav';
 import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
 import About from './pages/about/about';
+import Tracker from './pages/tracker/tracker';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           {/* Shop */}
           <Route path='/shop' element={<Shop />} />
           <Route path='/about' element={<About />} />
-          <Route path='' element='' />
+          <Route path='/tracker' element={<Tracker />} />
           <Route path='' element='' />
         </Routes>
     
