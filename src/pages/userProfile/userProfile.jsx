@@ -17,7 +17,7 @@ function UserProfile() {
         const URL = "https://localhost:5050";
 
         axios
-        .get(`${URL}/users/`)
+        .get(`${URL}/users`)
 
         .then((res) => {
             const users = res.data;
