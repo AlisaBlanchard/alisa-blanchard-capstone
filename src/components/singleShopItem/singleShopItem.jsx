@@ -1,8 +1,36 @@
 import '../singleShopItem/singleShopItem.scss';
+import '../../styles/global.scss';
+import { useParams } from 'react-router';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 //Single Shop Item Component
 
 function SingleShopItem() {
+
+    //State
+    const [itemInfo, setItemInfo]= useState({});
+    // console.log(itemInfo);
+
+    const {itemId} = useParams();
+
+    //GET to retrieve specific item by itemId
+    useEffect(() => {
+        const URL = "http://localhost:5050";
+
+        axios
+        .get(`${URL}/merchandise`)
+
+        .then((res) => {
+            const items = res.data;
+
+            const foundItem = items.find((item) => item.itemId == itemId);
+            
+            setItemInfo(foundItem);
+        });
+    }, []);
+
+
     return(
         <section className="single__item">
             <div className="back__wrap">
@@ -11,13 +39,13 @@ function SingleShopItem() {
             </div>
             <div className="item__info--wrap">
                 <div className="image">
-                    <img src="" alt="Item Image" />
+                    <img src={itemInfo.image} alt="Item Image" />
                 </div>
 
                 <div className="item__info">
-                    <h1>Item Name</h1>
-                    <h2>$19.99</h2>
-                    <p>Description of item from api lorem ipsum</p>
+                    <h1>{itemInfo.itemName}</h1>
+                    <h2>${itemInfo.price}</h2>
+                    <p>{itemInfo.description}</p>
                     <h3>Sizes</h3>
                     <div className="size__wrap">
                         <div>XS</div>
