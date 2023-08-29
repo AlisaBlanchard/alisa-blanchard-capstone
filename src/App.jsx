@@ -1,13 +1,14 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import Home from './pages/home/home';
+import './styles/global.scss';
 import UserDashboard from './components/userDashboard/userDashboard';
 import HeaderNav from './components/headerNav/headerNav';
 import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Tracker from './pages/tracker/tracker';
-import './styles/global.scss';
+import SingleShopItem from './components/singleShopItem/singleShopItem';
 
 function App() {
   return (
@@ -18,13 +19,19 @@ function App() {
           {/* <Route path='/' element={<Home />} /> */}
           {/* User Dashboard */}
           <Route path='/' element={<UserDashboard />} />
+          
           {/* User Profile */}
           <Route path='/profile/:userId' element={<UserProfile />} />
-          {/* Shop */}
+          
+          {/* Shop Routes */}
           <Route path='/shop' element={<Shop />} />
+          <Route path='/shop/:itemId' element={<SingleShopItem />} />
+
+          {/* About */}
           <Route path='/about' element={<About />} />
+
+          {/* Tracker Routes */}
           <Route path='/tracker/:userId' element={<Tracker />} />
-          <Route path='' element='' />
         </Routes>
     
       </div>

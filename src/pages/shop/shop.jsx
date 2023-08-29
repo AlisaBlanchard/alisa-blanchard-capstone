@@ -41,7 +41,7 @@ function Shop() {
                     const itemId = item.itemId;
 
                     return(
-                        <Link to={`/merchandise/${itemId}`}>
+                        <Link to={`/shop/${itemId}`}>
                             <ItemCard 
                                 key={item.itemId}
                                 img= {item.image}
