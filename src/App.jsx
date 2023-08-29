@@ -7,6 +7,7 @@ import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Tracker from './pages/tracker/tracker';
+import './styles/global.scss';
 
 function App() {
   return (
