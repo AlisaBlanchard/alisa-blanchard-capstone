@@ -1,14 +1,36 @@
+import { useEffect, useState } from 'react';
 import '../trackerForm/trackerForm.scss';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
 
 //Tracker Form Component
 
 function TrackerForm() {
 
     //State
-        //Initial Form State
+    const [tracker, setTracker] = useState({});
         //Updated Form State
 
+    const {userId} = useParams();
+    console.log(userId);
+
     //GET to get all trackers by specific user
+    useEffect(() => {
+        const URL = "https://localhost:5050";
+
+        axios
+        .get(`${URL}/trackers/${userId}`)
+
+        .then((res) => {
+            const users = res.data;
+            console.log(res.data);
+
+            const foundUser = users.find((user) => user.userId == userId);
+            
+            setTracker(foundUser);
+        });
+    }, []);
 
         // Find specific tracker by trackerId from dropdown menu
 

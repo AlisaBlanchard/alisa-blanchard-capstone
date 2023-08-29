@@ -8,20 +8,20 @@ import { useParams } from 'react-router-dom';
 function UserProfile() {
     //State
     const [details, setDetails] = useState({});
-    console.log(details);
+    // console.log(details);
 
     const { userId } = useParams();
 
     //GET to retrieve Users array
     useEffect(() => {
-        const URL = "https://localhost:5050";
+        const URL = "http://localhost:5050";
 
         axios
         .get(`${URL}/users`)
 
         .then((res) => {
             const users = res.data;
-            console.log(res.data);
+            // console.log(res.data);
 
             const foundUser = users.find((user) => user.userId == userId);
             
@@ -29,13 +29,13 @@ function UserProfile() {
         });
     }, []);
 
-    console.log(details);
+    // console.log(details);
 
 
     return (
         <section className="userProfile">
             <div className="user__wrap">
-            <h1>Username {details.username}</h1>
+            <h1>{details.username}</h1>
                 <div className="user__info--wrap">
                     <div src="#" alt="Profile Picture" className='user__img' />
                     <div className="user__info">

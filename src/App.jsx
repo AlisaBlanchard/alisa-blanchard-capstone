@@ -22,7 +22,7 @@ function App() {
           {/* Shop */}
           <Route path='/shop' element={<Shop />} />
           <Route path='/about' element={<About />} />
-          <Route path='/tracker' element={<Tracker />} />
+          <Route path='/tracker/:userId' element={<Tracker />} />
           <Route path='' element='' />
         </Routes>
     
