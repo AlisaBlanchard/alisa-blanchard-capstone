@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ItemCard from '../../components/itemCard/itemCard';
 import '../shop/shop.scss';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 //Shop Page 
 
@@ -36,13 +37,18 @@ function Shop() {
             <div className="merch">
                 {shopItems.map(item => {
                     console.log(item.price);
+
+                    const itemId = item.itemId;
+
                     return(
-                        <ItemCard 
-                            key={item.itemId}
-                            img= {item.image}
-                            name= {item.itemName}
-                            price= {item.price}
-                        />
+                        <Link to={`/merchandise/${itemId}`}>
+                            <ItemCard 
+                                key={item.itemId}
+                                img= {item.image}
+                                name= {item.itemName}
+                                price= {item.price}
+                            />
+                        </Link>
                         )
                 })}
             </div>
