@@ -2,18 +2,15 @@ import '../itemCard/itemCard.scss';
 
 // Item Card Component
 
-function ItemCard() {
+function ItemCard({key, img, name, price}) {
     // State
-
-    // GET to get Merch item array
-
 
     return(
         <div className="itemCard">
-            <img src="" alt="item image" />
+            <img src={img} alt="item image" />
             <div className="info__wrap">
-                <p>Item Name</p>
-                <p>Price</p>
+                <p>{name}</p>
+                <p>{price}</p>
             </div>
 
         </div>
