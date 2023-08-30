@@ -1,34 +1,39 @@
-import { Link } from 'react-router-dom';
-import '../logIn/logIn.scss';
+import { GoogleLogin } from '@react-oauth/google';
 
+//Google Log in button 
 
-//Log In Component
+function LogIn() {
 
-function LogIn({visibilityHandler}) {
+    const clientId = "202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com";
+
+    const onSuccess = (res) => {
+        console.log("LOGIN SUCCESS! Cureent user: ", res.profileObj);
+    }
+
+    const onFailure = (res) => {
+        console.log("LOGIN FAILED! Cureent user: ", res);
+    }
+
     return(
-        <section className="logIn">
-            <div className="close__wrap">
-                <h2>Sign In</h2>
-                <Link to='/' onClick={visibilityHandler}>
-                    <img src="#" alt="X icon" />
-                </Link>
-            </div>
-
-            <form action="submit">
-                <p>Become a member today!</p>
-
-                <label htmlFor="Email" >Email</label>
-                <input type="text" className='email'/>
-
-                <label htmlFor="Password">Password</label>
-                <input type="text" className='password'/>
-
-                <div className="button__wrap">
-                    <button className="signIn" type='submit'>Sign In</button>
-                    <button className="signUp">Sign Up</button>
-                </div>
-            </form>
-        </section>
+        <div id='signInButton'>
+            {/* <GoogleLogin 
+                clientId={clientId}
+                buttonText="Login"
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
+            /> */}
+            <GoogleLogin
+                onSuccess={credentialResponse => {
+                    console.log(credentialResponse);
+                }}
+                onError={() => {
+                    console.log('Login Failed')
+                }}
+                useOneTap
+            />
+        </div>
     )
 }
 

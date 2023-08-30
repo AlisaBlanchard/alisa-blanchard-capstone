@@ -1,8 +1,8 @@
 import "../headerNav/headerNav.scss";
 import logo from "../../assets/logo/Logo2.png";
 import { Link, NavLink, useParams } from "react-router-dom";
-import LogIn from "../logIn/logIn";
 import { useState } from "react";
+import LogInForm from "../logInForm/logInForm";
 
 // Headernav Component
 
@@ -35,8 +35,8 @@ function HeaderNav() {
         </li>
       </ul>
       {logInVisibility &&
-        <LogIn 
-        visibilityHandler={visibilityHandler}
+        <LogInForm 
+          visibilityHandler={visibilityHandler}
         />
       }
     </nav>
