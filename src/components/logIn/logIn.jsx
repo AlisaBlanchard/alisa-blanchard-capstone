@@ -1,13 +1,17 @@
+import { Link } from 'react-router-dom';
 import '../logIn/logIn.scss';
+
 
 //Log In Component
 
-function LogIn() {
+function LogIn({visibilityHandler}) {
     return(
         <section className="logIn">
             <div className="close__wrap">
                 <h2>Sign In</h2>
-                <img src="#" alt="X icon" />
+                <Link to='/' onClick={visibilityHandler}>
+                    <img src="#" alt="X icon" />
+                </Link>
             </div>
 
             <form action="submit">
@@ -19,8 +23,10 @@ function LogIn() {
                 <label htmlFor="Password">Password</label>
                 <input type="text" className='password'/>
 
-                <button className="signIn" type='submit'>Sign In</button>
-                <button className="signUp">Sign Up</button>
+                <div className="button__wrap">
+                    <button className="signIn" type='submit'>Sign In</button>
+                    <button className="signUp">Sign Up</button>
+                </div>
             </form>
         </section>
     )

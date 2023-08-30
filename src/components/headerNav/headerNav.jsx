@@ -1,38 +1,46 @@
-import '../headerNav/headerNav.scss';
-import logo from '../../assets/logo/Logo2.png';
-import { Link, NavLink } from 'react-router-dom';
+import "../headerNav/headerNav.scss";
+import logo from "../../assets/logo/Logo2.png";
+import { Link, NavLink, useParams } from "react-router-dom";
+import LogIn from "../logIn/logIn";
+import { useState } from "react";
 
 // Headernav Component
 
 function HeaderNav() {
+  //Need a logged in version and logged out version
+    //State
+    const [logInVisibility, setLogInVisibility] = useState(false);
+    const [style, setStyle] = useState(false);
 
-    //Need a logged in version and logged out version
-    return (
-        <nav>
-            <Link to="/" >
-            <img src={logo} alt="Logo" className='logo' />
-            </Link>
+    const {userId} = useParams();
 
-            <ul className='header_nav'>
-                
-                <li>
-                    <NavLink 
-                        exact to="/"
-                    >
-                        SHOP
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        exact to="/"
-                    >
-                    LOG OUT
-                    </NavLink>
-                </li>
-            </ul>
+    const visibilityHandler = () => {
+        setLogInVisibility(!logInVisibility);
+        setStyle(!style);
+    }
 
-        </nav>
-    )
+  return (
+    <nav>
+       <div className={style && 'login__background'}></div> 
+      <Link to="/">
+        <img src={logo} alt="Logo" className="logo" />
+      </Link>
+
+      <ul className="header_nav">
+        <li>
+          <NavLink to="/">SHOP</NavLink>
+        </li>
+        <li>
+          <NavLink to="/" onClick={visibilityHandler}>LOG {userId ? 'OUT' : 'IN'}</NavLink>
+        </li>
+      </ul>
+      {logInVisibility &&
+        <LogIn 
+        visibilityHandler={visibilityHandler}
+        />
+      }
+    </nav>
+  );
 }
 
 export default HeaderNav;
