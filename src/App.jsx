@@ -9,12 +9,33 @@ import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Tracker from './pages/tracker/tracker';
 import SingleShopItem from './components/singleShopItem/singleShopItem';
+import LogIn from './components/logIn/logIn';
+import LogOut from './components/logOut/logOut';
+import { useEffect } from 'react';
+import { gapi } from 'gapi-script';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 
 function App() {
+
+  const clientId = "202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com";
+
+  // useEffect(() => {
+  //   function start() {
+  //     gapi.client.init({
+  //       clientId: clientId,
+  //       scope: ""
+  //     })
+  //   };
+
+  //   gapi.load('client:auth2', start);
+  // }, []) 
+
   return (
     <BrowserRouter>
       <div className="App">
-      <HeaderNav />
+      <HeaderNav 
+        />
         <Routes>
           {/* <Route path='/' element={<Home />} /> */}
           {/* User Dashboard */}
