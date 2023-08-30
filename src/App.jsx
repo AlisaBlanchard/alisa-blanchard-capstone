@@ -39,7 +39,7 @@ function App() {
         <Routes>
           {/* <Route path='/' element={<Home />} /> */}
           {/* User Dashboard */}
-          <Route path='/' element={<UserDashboard />} />
+          <Route path='/:userId' element={<UserDashboard />} />
           
           {/* User Profile */}
           <Route path='/profile/:userId' element={<UserProfile />} />
