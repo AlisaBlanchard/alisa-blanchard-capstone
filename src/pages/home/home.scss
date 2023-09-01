@@ -1,2 +1,88 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
 
 //Home Page Styling
+
+.home {
+
+    .hero__wrap {
+
+        img {
+
+        }
+
+        h1 {
+
+        }
+
+        h2 {
+
+        }
+    }
+
+    .ctaBox__wrap {
+
+        img {
+
+        }
+
+        .ctaBox {
+
+            p {
+
+            }
+
+            h2 {
+
+            }
+
+            button {
+
+            }
+        }
+    }
+
+    .scrolling__banner {
+
+    }
+
+    .subscription__wrap {
+
+        .subscription__card {
+            
+        }
+    }
+
+    .media__wrap {
+
+        p{
+
+        }
+
+        .media__banner {
+
+        }
+    }
+
+    .shop__cta {
+        
+        img {
+
+        }
+
+        h2 {
+
+        }
+    }
+
+    .data__prev {
+
+        h2 {
+
+        }
+
+        img {
+
+        }
+    }
+}
