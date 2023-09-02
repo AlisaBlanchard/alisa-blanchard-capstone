@@ -8,35 +8,6 @@ import { useParams } from 'react-router-dom';
 
 function TrackerForm() {
 
-    //State
-    const [tracker, setTracker] = useState({});
-        //Updated Form State
-
-    const {userId} = useParams();
-    console.log(userId);
-
-    //GET to get all trackers by specific user
-    useEffect(() => {
-        const URL = "https://localhost:5050";
-
-        axios
-        .get(`${URL}/trackers/${userId}`)
-
-        .then((res) => {
-            const users = res.data;
-            console.log(res.data);
-
-            const foundUser = users.find((user) => user.userId == userId);
-            
-            setTracker(foundUser);
-        });
-    }, []);
-
-        // Find specific tracker by trackerId from dropdown menu
-
-        //Send selected tracker
-
-        //Using selected tracker data fill the tracker component 
 
     //Change handler to handle form changes
 
