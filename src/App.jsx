@@ -5,6 +5,7 @@ import './styles/global.scss';
 import Home from './pages/home/home';
 import UserDashboard from './components/userDashboard/userDashboard';
 import HeaderNav from './components/headerNav/headerNav';
+import Footer from './components/footer/footer';
 import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
 import About from './pages/about/about';
@@ -54,6 +55,7 @@ function App() {
           {/* Tracker Routes */}
           <Route path='/tracker/:userId' element={<Tracker />} />
         </Routes>
+      <Footer />
     
       </div>
     </BrowserRouter>
