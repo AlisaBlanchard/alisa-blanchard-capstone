@@ -60,14 +60,17 @@ function Tracker() {
             </div>
 
             <div className="tracker__wrap">
-                <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler}>
-                    <option value='tracker default'>Pick Your Tracker</option>
-                {trackers.map((tracker) => {
-                    return(
-                        <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
-                    )
-                })}
-                </select>
+                <div className="tracker__cta--wrap">
+                    <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler}>
+                        <option value='tracker default'>Pick Your Tracker</option>
+                    {trackers.map((tracker) => {
+                        return(
+                            <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
+                        )
+                    })}
+                    </select>
+                    <button>Create New Tracker</button>
+                </div>
                 {/* Use Find method to find specific tracker selected in dropdown
                  by trackerId to generate the appropriate tracker form below */}
 
