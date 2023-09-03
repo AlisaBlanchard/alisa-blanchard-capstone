@@ -49,9 +49,9 @@ function UserDashboard() {
           </Link>
         </div>
 
-        <Link to='/:articleId'>
+        <Link to={`/article/${article.articleId}`}>
           <div className="article">
-            <img src={article.image} alt="" />
+            <img src={article.image} alt="Article Image" />
             <p>{article.title}</p>
           </div>
         </Link>

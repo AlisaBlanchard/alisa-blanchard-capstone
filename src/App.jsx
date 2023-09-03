@@ -11,6 +11,7 @@ import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Tracker from './pages/tracker/tracker';
 import SingleShopItem from './components/singleShopItem/singleShopItem';
+import Article from './components/article/article';
 import LogIn from './components/logIn/logIn';
 import LogOut from './components/logOut/logOut';
 import { useEffect } from 'react';
@@ -41,6 +42,7 @@ function App() {
           <Route path='/' element={<Home />} />
           {/* User Dashboard */}
           <Route path='/:userId' element={<UserDashboard />} />
+          <Route path='/article/:articleId' element={<Article />} />
           
           {/* User Profile */}
           <Route path='/profile/:userId' element={<UserProfile />} />
