@@ -32,7 +32,7 @@ function Home() {
 
             <div className="media__wrap">
                 <p>As Seen in</p>
-                <div className="media__banner">BUSINESS BUSINESS BUSINESS BUSINESS BUSINESS BUSINESS BUSINESS </div>
+                <div className="media__banner">BUSINESS BUSINESS BUSINESS BUSINESS BUSINESS BUSINESS </div>
             </div>
 
             <div className="shop__cta">

@@ -4,8 +4,15 @@
 //Home Page Styling
 
 .home {
+    background-color: variables.$primary-background-color;
+
+    h3 {
+        padding: 1rem;
+    }
 
     .hero__wrap {
+        background-color: variables.$primary-element-background-color;
+        padding: 1rem;
 
         img {
 
@@ -21,15 +28,23 @@
     }
 
     .ctaBox__wrap {
+        display: flex;
+        flex-direction: column;
 
         img {
-
+            background-color: variables.$primary-element-background-color;
+            width: 100%;
+            height: 12rem;
         }
 
         .ctaBox {
+            border: 2px solid variables.$primary-text-color;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
 
             p {
-
+                margin: .5rem 0;
             }
 
             h2 {
@@ -37,52 +52,79 @@
             }
 
             button {
-
+                background-color: variables.$primary-element-background-color;
+                display: flex;
+                // margin: .5rem;
+                border-radius: 22px;
+                font-size: 13px;
+                align-self: center;
+                padding: .5rem;
+                width: 4rem;
             }
         }
     }
 
     .scrolling__banner {
-
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
     }
 
     .subscription__wrap {
 
         .subscription__card {
-            
+            background-color: variables.$primary-element-background-color;
+            height: 16rem;
+            margin: 1rem;
+            border-radius: 5px;
+
         }
     }
 
     .media__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
 
         p{
 
         }
 
         .media__banner {
-
+            height: 3rem;
         }
     }
 
     .shop__cta {
+        display: flex;
+        flex-direction: column;
         
         img {
-
+            background-color: variables.$primary-element-background-color;
+            height: 16rem;
         }
 
         h2 {
+            height: 10rem;
 
         }
     }
 
     .data__prev {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
 
         h2 {
-
+            margin: 1rem 0;
         }
 
         img {
-
+            background-color: variables.$primary-element-background-color;
+            height: 16rem;
         }
     }
 }
