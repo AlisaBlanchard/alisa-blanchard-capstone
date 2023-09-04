@@ -1,4 +1,5 @@
 import '../about/about.scss';
+import aboutHero from '../../assets/Images/heroImages/ray-hennessy-fWBCq0DTwAI-unsplash.jpg';
 
 //About Page 
 
@@ -6,8 +7,11 @@ function About() {
     return(
         <section className="about">
             <div className="hero">
-                <h1>About Us</h1>
-                <h2>Meaningful quote that relates to the company and their goals</h2>
+                <img src={aboutHero} alt="Hero Image" />
+                <div className="hero__text">
+                    <h1>About Us</h1>
+                    <h2>Meaningful quote that relates to the company and their goals</h2>
+                </div>
             </div>
 
             <article className="mission__statement">

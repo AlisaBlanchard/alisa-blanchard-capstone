@@ -1,4 +1,5 @@
 import '../home/home.scss';
+import hero from '../../assets/Images/heroImages/Hero Image.jpg';
 
 //Home Page Component
 
@@ -6,9 +7,11 @@ function Home() {
     return(
         <section className='home'>
             <div className="hero__wrap">
-                <img src="#" alt="Hero Image" className="hero__image" />
-                <h1>LifeTracker</h1>
-                <h2>Meaningful quote that doubles as a call to action for the user</h2>
+                <img src={hero} alt="Hero Image" className="hero__image" />
+                <div className="hero__text--wrap">
+                    <h1>LifeTracker</h1>
+                    <h2>Meaningful quote that doubles as a call to action for the user</h2>
+                </div>
             </div>
 
             <h3>Text Describing LifeTracker product and why it's important and unique</h3>
