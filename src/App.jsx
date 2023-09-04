@@ -14,12 +14,31 @@ import SingleShopItem from './components/singleShopItem/singleShopItem';
 import Article from './components/article/article';
 import LogIn from './components/logIn/logIn';
 import LogOut from './components/logOut/logOut';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { gapi } from 'gapi-script';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import axios from 'axios';
 
 
 function App() {
+  const [user, setUser] = useState(null);
+
+
+  useEffect(() => {
+    //Fetch user information from the backend
+
+    const URL = "http://localhost:5050";
+
+    axios
+    .get(`${URL}/user`, { withCredentials: true})
+
+    .then((res) => {
+        setUser(res.data.user);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }, []);
 
   const clientId = "202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com";
 
@@ -37,7 +56,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-      <HeaderNav />
+      <HeaderNav 
+        user={user} setUser={setUser}
+        />
         <Routes>
           <Route path='/' element={<Home />} />
           {/* User Dashboard */}
