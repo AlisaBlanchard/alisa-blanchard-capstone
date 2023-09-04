@@ -8,6 +8,33 @@ import { useParams } from 'react-router-dom';
 
 function TrackerForm() {
 
+    //State
+    const [tracker, setTracker] = useState({});
+    const [template, setTemplate] = useState([]);
+
+    // console.log(template);
+
+    const userInfo = useParams();
+
+    const userId = userInfo.userId;
+    const trackerId = userInfo.trackerId;
+
+    //GET to retrieve tracker info by userId & trackerId
+    useEffect(() => {
+        const URL = "http://localhost:5050";
+
+
+        axios
+        .get(`${URL}/trackers/${userId}/${trackerId}`)
+
+        .then((res) => {
+
+            const trackerData = res.data;
+            setTracker(trackerData);
+            setTemplate(trackerData.template);
+        });
+    }, []);
+
 
     //Change handler to handle form changes
 
@@ -26,50 +53,26 @@ function TrackerForm() {
             <form action="submit">
                 <div className="form__grid--wrap">
                     <div className="grid__header">
-                        <h2>Tracker Title</h2>
+                        <h2>{tracker.tracker_name}</h2>
                         <button className="submit">Submit</button>
                     </div>
                     {/* MAP to generate tracker grid rows from specific tracker's array of lables & inputs */}
-                    <div className="grid__row--wrap">
-                        <div className="grid__lable">
-                            <h3>Focused</h3>
-                        </div>
-
-                        <div className="grid__input">
-                            <button type='radio' className='radio'> <p>Yes</p></button>
-                            <button type='radio' className='radio'> <p>No</p></button>
-                        </div>
-                    </div>
-                    <div className="grid__row--wrap">
-                        <div className="grid__lable">
-                            <h3>Focused</h3>
-                        </div>
-
-                        <div className="grid__input">
-                            <button type='radio' className='radio'> <p>Yes</p></button>
-                            <button type='radio' className='radio'> <p>No</p></button>
-                        </div>
-                    </div>
-                    <div className="grid__row--wrap">
-                        <div className="grid__lable">
-                            <h3>Focused</h3>
-                        </div>
-
-                        <div className="grid__input">
-                            <button type='radio' className='radio'> <p>Yes</p></button>
-                            <button type='radio' className='radio'> <p>No</p></button>
-                        </div>
-                    </div>
-                    <div className="grid__row--wrap">
-                        <div className="grid__lable">
-                            <h3>Focused</h3>
-                        </div>
-
-                        <div className="grid__input">
-                            <button type='radio' className='radio'> <p>Yes</p></button>
-                            <button type='radio' className='radio'> <p>No</p></button>
-                        </div>
-                    </div>
+                    {template.map((row) => {
+                        return(
+                            <div className="grid__row--wrap">
+                                <div className="grid__label">
+                                    <h3>{row.label}</h3>
+                                </div>
+                                {/* Needs to generate specific input style based on method received from template 
+                                if/else/else/else statement covering all available input options?*/}
+                                <div className="grid__input">
+                                    <button type='radio' className='radio'> <p>Yes</p></button>
+                                    <button type='radio' className='radio'> <p>No</p></button>
+                                </div>
+                            </div>
+    
+                        )
+                    })}
                     
                 </div>
             </form>
