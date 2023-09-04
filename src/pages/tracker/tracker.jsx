@@ -3,6 +3,7 @@ import TrackerForm from '../../components/trackerForm/trackerForm';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 //Tracker Page
 
@@ -39,7 +40,7 @@ function Tracker() {
                 }
             });
 
-            console.log(userTrackers);
+            // console.log(userTrackers);
             
             //Setting state
             setTrackers(userTrackers);
@@ -48,7 +49,10 @@ function Tracker() {
     }, []);
 
     const trackerChangeHandler = (e) => {
-        console.log(e);
+        console.log(e.target);
+
+        // const url = new URL(`http://localhost:3000/${userId}/${trackerId}`)
+
     }
 
 
@@ -65,19 +69,12 @@ function Tracker() {
                         <option value='tracker default'>Pick Your Tracker</option>
                     {trackers.map((tracker) => {
                         return(
-                            <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
+                                <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
                         )
                     })}
                     </select>
                     <button>Create New Tracker</button>
-                </div>
-                {/* Use Find method to find specific tracker selected in dropdown
-                 by trackerId to generate the appropriate tracker form below */}
-
-                {/* {userTrackers.find((tracker) => {
-                    tracker.trackerId == trackerId
-                })} */}
-                
+                </div>                
                 <TrackerForm 
                     userTrackers={userTrackers}
                 />
