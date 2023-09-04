@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import '../footer/footer.scss';
+import facebook from '../../assets/icons/Social/facebook.svg';
+import instagram from '../../assets/icons/Social/instagram.svg';
+import linkedin from '../../assets/icons/Social/linkedin.svg';
+import plus from '../../assets/icons/plus.svg';
 
 
 //Footer Component
@@ -19,9 +23,9 @@ function Footer() {
             <div className="social__wrap">
                 <h3>Stay Connected</h3>
                 <div className="icon__wrap">
-                    <img src="#" alt="Social Icon" />
-                    <img src="#" alt="Social Icon" />
-                    <img src="#" alt="Social Icon" />
+                    <img src={facebook} alt="facebook Icon" />
+                    <img src={instagram} alt="instagram Icon" />
+                    <img src={linkedin} alt="linkedIn Icon" />
                 </div>
             </div>
 
@@ -30,7 +34,7 @@ function Footer() {
                 <div className="ourStory__wrap">
                     <div className="title__wrap">
                         <h2>Our Story</h2>
-                        <img src="#" alt="Plus Icon" />
+                        <img src={plus} alt="Plus Icon" />
                     </div>
 
                     <div className='mission__cta'>
@@ -42,7 +46,7 @@ function Footer() {
                 <div className="support__wrap">
                     <div className="title__wrap">
                         <h2>Customer Support</h2>
-                        <img src="#" alt="Plus Icon" />
+                        <img src={plus} alt="Plus Icon" />
                     </div>
 
                     <div className='support__links'>
