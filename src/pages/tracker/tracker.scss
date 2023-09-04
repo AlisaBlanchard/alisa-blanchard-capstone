@@ -27,14 +27,25 @@
 
     .tracker__wrap {
 
-        .tracker__dropdown {
-            background-color: variables.$primary-element-background-color;
+        .tracker__cta--wrap {
             display: flex;
-            margin: .5rem;
-            border-radius: 22px;
-            font-size: 13px;
-                
+            margin: 0 1rem;
 
+            .tracker__dropdown {
+                background-color: variables.$primary-element-background-color;
+                display: flex;
+                margin: .5rem;
+                border-radius: 22px;
+                font-size: 13px;
+                    
+            }
+
+            button {
+                margin-left: .5rem;
+                font-size: 13px;
+            }
+    
         }
+
     }
 }
