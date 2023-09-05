@@ -10,6 +10,7 @@ import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Tracker from './pages/tracker/tracker';
+import TrackerTemplateBuilder from './components/trackerTemplateBuilder/trackerTemplateBuilder';
 import SingleShopItem from './components/singleShopItem/singleShopItem';
 import Article from './components/article/article';
 import LogIn from './components/logIn/logIn';
@@ -56,6 +57,7 @@ function App() {
 
           {/* Tracker Routes */}
           <Route path='/:userId/tracker/:trackerId' element={<Tracker />} />
+          <Route path='/:userId/tracker/build' element={<TrackerTemplateBuilder />} />
         </Routes>
         <Footer />
 
