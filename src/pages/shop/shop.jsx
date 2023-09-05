@@ -3,6 +3,8 @@ import ItemCard from '../../components/itemCard/itemCard';
 import '../shop/shop.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import shopHero from '../../assets/Images/heroImages/rachel-mcdermott-mTJ0-5tMs6A-unsplash.jpg';
+
 
 //Shop Page 
 
@@ -31,8 +33,12 @@ function Shop() {
     return(
         <section className="shop">
             <div className="hero">
-                <h1>Call To Action</h1>
-                <p>Hero Text about quality of life x products you can buy below!</p>
+                <img src={shopHero} alt="" />
+
+                <div className="hero__text">
+                    <h1>Call To Action</h1>
+                    <p>Hero Text about quality of life x products you can buy below!</p>
+                </div>
             </div>
             <div className="merch">
                 {shopItems.map(item => {

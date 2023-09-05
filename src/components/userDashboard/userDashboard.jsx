@@ -9,7 +9,7 @@ import axios from "axios";
 
 function UserDashboard() {
 
-  const {userId} = useParams();
+  const { userId } = useParams();
 
   //State
   const [article, setArticle] = useState({});
@@ -19,16 +19,16 @@ function UserDashboard() {
     const URL = "http://localhost:5050";
 
     axios
-    .get(`${URL}/articles`)
+      .get(`${URL}/articles`)
 
-    .then((res) => {
+      .then((res) => {
         const articles = res.data;
 
-        const randomArticle = articles[Math.floor(Math.random()*articles.length)];
+        const randomArticle = articles[Math.floor(Math.random() * articles.length)];
         console.log(randomArticle);
         setArticle(randomArticle);
-    });
-}, []);
+      });
+  }, []);
 
 
   return (
@@ -36,7 +36,7 @@ function UserDashboard() {
       <h1>Welcome Back!</h1>
       <div className="dashboard__wrap">
         <div className="tracker__wrap">
-          <Link to={`/tracker/${userId}`}>
+          <Link to={`/${userId}/tracker/001`}>
             <div className="tracker">
               <p>New Tracker Session</p>
             </div>
@@ -56,7 +56,7 @@ function UserDashboard() {
           </div>
         </Link>
       </div>
-      
+
       <Link to='/shop'>
         <div className="shop__cta">
           <p>Shop Now</p>

@@ -10,6 +10,7 @@ import UserProfile from './pages/userProfile/userProfile';
 import Shop from './pages/shop/shop';
 import About from './pages/about/about';
 import Tracker from './pages/tracker/tracker';
+import TrackerTemplateBuilder from './components/trackerTemplateBuilder/trackerTemplateBuilder';
 import SingleShopItem from './components/singleShopItem/singleShopItem';
 import Article from './components/article/article';
 import LogIn from './components/logIn/logIn';
@@ -64,10 +65,10 @@ function App() {
           {/* User Dashboard */}
           <Route path='/:userId' element={<UserDashboard />} />
           <Route path='/article/:articleId' element={<Article />} />
-          
+
           {/* User Profile */}
           <Route path='/profile/:userId' element={<UserProfile />} />
-          
+
           {/* Shop Routes */}
           <Route path='/shop' element={<Shop />} />
           <Route path='/shop/:itemId' element={<SingleShopItem />} />
@@ -76,10 +77,11 @@ function App() {
           <Route path='/about' element={<About />} />
 
           {/* Tracker Routes */}
-          <Route path='/tracker/:userId' element={<Tracker />} />
+          <Route path='/:userId/tracker/:trackerId' element={<Tracker />} />
+          <Route path='/:userId/tracker/build' element={<TrackerTemplateBuilder />} />
         </Routes>
-      <Footer />
-    
+        <Footer />
+
       </div>
     </BrowserRouter>
   );
