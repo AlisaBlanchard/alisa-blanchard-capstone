@@ -12,7 +12,7 @@ import { useState } from "react";
 function Footer() {
   //State
   const [menuVisibility, setMenuVisibility] = useState(false);
-  const [icon, setIcon] = useState(menuVisibility);
+  const [icon, setIcon] = useState(plus);
 
   //ClickHandler to drop down Menus
   const handleDropdown = () => {
