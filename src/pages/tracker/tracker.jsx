@@ -73,7 +73,9 @@ function Tracker() {
                         )
                     })}
                     </select>
-                    <button>Create New Tracker</button>
+                    <Link to={`/${userId}/tracker/build`}>
+                        <div className='new__tracker'>Create New Tracker</div >
+                    </Link>
                 </div>                
                 <TrackerForm 
                     userTrackers={userTrackers}
