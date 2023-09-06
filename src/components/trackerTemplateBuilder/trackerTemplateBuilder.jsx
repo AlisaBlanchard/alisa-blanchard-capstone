@@ -39,6 +39,18 @@ function TrackerTemplateBuilder() {
                     <label htmlFor="input__type">Input Type</label>
                     <input type="text" placeholder='Input Type Dropdown' />
                 </div>
+                
+                <label>Tracker Field</label>
+                <div>
+                    <label htmlFor="input__name">Input Name</label>
+                    <input type="text" placeholder='Mood, Meals Eaten...' />
+                </div>
+                <div>
+                    <label htmlFor="input__type">Input Type</label>
+                    <input type="text" placeholder='Input Type Dropdown' />
+                </div>
+
+
                 <p onClick={addFieldHandler}>+ New Field</p>
                 <button type='submit'>CREATE TRACKER</button>
 
