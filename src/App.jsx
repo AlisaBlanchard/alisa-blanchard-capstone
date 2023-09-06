@@ -41,18 +41,6 @@ function App() {
     });
   }, []);
 
-  const clientId = "202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com";
-
-  // useEffect(() => {
-  //   function start() {
-  //     gapi.client.init({
-  //       clientId: clientId,
-  //       scope: ""
-  //     })
-  //   };
-
-  //   gapi.load('client:auth2', start);
-  // }, []) 
 
   return (
     <BrowserRouter>

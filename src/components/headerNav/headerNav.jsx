@@ -8,7 +8,7 @@ import axios from "axios";
 
 // Headernav Component
 
-function HeaderNav(props) {
+function HeaderNav({user, setUser}) {
   //Need a logged in version and logged out version
     //State
     const [logInVisibility, setLogInVisibility] = useState(false);
@@ -25,9 +25,9 @@ function HeaderNav(props) {
     const handleLogout = () => {
       // Log out the user on the backend.
       axios
-        .get('http://localhost:5000/logout', { withCredentials: true })
+        .get('http://localhost:5050/logout', { withCredentials: true })
         .then((data) => {
-          props.setUser(null);
+          setUser(null);
           if (data.redirect) {
             navigate("/")
           }
@@ -49,13 +49,15 @@ function HeaderNav(props) {
           <NavLink to="/">SHOP</NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={visibilityHandler}>LOG {userId ? 'OUT' : 'IN'}</NavLink>
+          <NavLink to="/" onClick={visibilityHandler}>LOG {!userId ? 'OUT' : 'IN'}</NavLink>
         </li>
       </ul>
       {logInVisibility &&
         <LogInForm 
           visibilityHandler={visibilityHandler}
           handleLogout={handleLogout}
+          user={user}
+          setUser={setUser}
         />
       }
     </nav>

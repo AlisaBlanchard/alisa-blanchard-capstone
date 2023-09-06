@@ -4,8 +4,6 @@ import { GoogleLogin } from '@react-oauth/google';
 
 function LogIn() {
 
-    const clientId = "202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com";
-
     return(
         <div id='signInButton'>
             
