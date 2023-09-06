@@ -7,7 +7,7 @@ import { gapi } from 'gapi-script';
 
 //Log In Form Component
 
-function LogInForm({visibilityHandler}) {
+function LogInForm({visibilityHandler, handleLogout, user, setUser}) {
 
     const clientId = "202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com";
 
@@ -24,7 +24,7 @@ function LogInForm({visibilityHandler}) {
   
     return(
         <section className="logIn">
-            <div className="close__wrap">
+            <div className="close__wrap"> 
                 <h2>Sign In</h2>
                 <Link to='/' onClick={visibilityHandler}>
                     <img src="#" alt="X icon" />
@@ -42,8 +42,10 @@ function LogInForm({visibilityHandler}) {
 
                 <div className="button__wrap">
                     <button className="signIn" type='submit'>Sign In</button>
-                    <button className="signUp">Sign Up</button>
-                    {<LogIn />}
+                    <button className="signOut" onClick={handleLogout}>Sign Out</button>
+                    <Link to="http://localhost:5050/auth/google">
+                        {<LogIn />}
+                    </Link>
                 </div>
             </form>
         </section>

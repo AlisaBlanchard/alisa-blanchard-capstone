@@ -2,6 +2,7 @@ import axios from 'axios';
 import '../userProfile/userProfile.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import AuthHoc from '../../components/AuthHoc/AuthHoc';
 
 //UserProfile Page
 
@@ -56,4 +57,4 @@ function UserProfile() {
     )
 }
 
-export default UserProfile;
+export default AuthHoc(UserProfile);
