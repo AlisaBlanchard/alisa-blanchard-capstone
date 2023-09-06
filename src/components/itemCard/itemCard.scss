@@ -1,0 +1,35 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Item Card Styling
+
+.itemCard {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$primary-background-color;
+    height: 14rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 2px solid variables.$primary-element-background-color;
+
+    img {
+        background-color: variables.$primary-background-color;
+        height: 10rem;
+        border-bottom: 2px solid variables.$primary-element-background-color;
+
+    }
+
+    .info__wrap {
+        background-color: variables.$primary-background-color;
+        margin: 0 .5rem 0 .5rem;
+        height: 4rem;
+        border-radius: 5px;
+        text-align: left;
+
+        p {
+            margin: .5rem 0 0 .5rem;
+        }
+    }
+
+}

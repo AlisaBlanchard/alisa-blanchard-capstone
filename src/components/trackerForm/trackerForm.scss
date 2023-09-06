@@ -1,0 +1,83 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Tracker Form Styling
+
+.trackerForm {
+    margin: 1rem;
+    width: 14rem;
+
+
+    form {
+
+
+        .form__grid--wrap {
+            display: grid;
+            grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+            grid-template-columns: 7rem 7rem;
+            border: 2px solid variables.$primary-text-color;
+            border-radius: 5px;
+            width: 14rem;
+            background-color: variables.$primary-element-background-color;
+
+
+
+
+
+            .grid__header {
+                display: flex;
+                grid-column: 1 / span 2;
+                justify-content: space-between;
+                padding: 0 1rem;
+                
+
+
+                h2 {
+                    font-size: 22px;
+                    padding-top: .5rem;
+                }
+
+                .submit {
+                    background-color: variables.$primary-element-background-color;
+                    display: flex;
+                    margin: .6rem;
+                    border-radius: 22px;
+                    font-size: 13px;  
+                    height: 1.25rem;
+                }
+            }
+
+            .grid__row--wrap {
+                display:flex;
+                grid-column: 1 / span 2;
+                justify-content: space-between;
+                padding: 0 1rem;
+                border-top: 2px solid variables.$primary-text-color;
+                
+
+                .grid__label {
+                    border-right: 2px solid variables.$primary-text-color;
+                    width: 100%;
+                    text-align: left;
+
+                    h3 {
+                        font-size: 15px;
+                        margin: .5rem .5rem .5rem 0;
+                    }
+                }
+    
+                .grid__input {
+                    display: flex;
+                    width: 100%;
+                    padding: .5rem 0 .5rem 1rem;
+                    justify-content: space-around;
+
+                    .radio {
+                        
+                    }
+                }
+                }
+
+        }
+    }
+}
