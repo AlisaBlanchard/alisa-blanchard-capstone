@@ -3,13 +3,23 @@ import '../userProfile/userProfile.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AuthHoc from '../../components/AuthHoc/AuthHoc';
+import BarChart from '../../components/barChart/barChart';
 
 //UserProfile Page
 
 function UserProfile() {
     //State
     const [details, setDetails] = useState({});
-    // console.log(details);
+    const [userTrackers, setUserTrackers] = useState([]);
+    const [chartData, setChartData] = useState({
+        labels: userTrackers.map((obj) => obj.label),
+        datasets: [{
+            label:userTrackers.map((obj) => obj.label),
+            data: userTrackers.map((obj) => obj.value),
+
+        }]
+    });
+    console.log(chartData);
 
     const { userId } = useParams();
 
@@ -29,6 +39,29 @@ function UserProfile() {
             setDetails(foundUser);
         });
     }, []);
+
+    //GET to retrieve trackers array
+    useEffect(() => {
+        const URL = "http://localhost:5050";
+
+        axios
+        .get(`${URL}/trackers`)
+
+        .then((res) => {
+            const users = res.data;
+            // console.log(res.data);
+
+            //Find Specific user's tracker data by userId
+            const foundUser = users.find((user) => user.userId == userId);
+
+            //Map over foundUser tracker data and make a new array holding the Session Data array
+            const trackerData = foundUser.sessions.map((session) => session.data);
+
+            // console.log(trackerData);
+            setUserTrackers(trackerData);
+        });
+    }, []);
+
 
     // console.log(details);
 
@@ -51,10 +84,10 @@ function UserProfile() {
                     <div className="tracker__dropdown">Tracker Dropdown</div>
                     <div className="data__button">See My Data</div>
                 </div>
-                <div className="data__visualizer">CHARTS</div>
+                <div className="data__visualizer"><BarChart /></div>
             </div>
         </section>
     )
 }
 
-export default AuthHoc(UserProfile);
+export default UserProfile;
