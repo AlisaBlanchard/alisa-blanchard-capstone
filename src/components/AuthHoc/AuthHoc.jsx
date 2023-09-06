@@ -7,7 +7,7 @@ function AuthHoc(Component) {
         const navigate = useNavigate();
         const [auth,setauth] = useState(false)
         useEffect(() => {
-            axios.get("http://localhost:5000/user", { withCredentials: true })
+            axios.get("http://localhost:5050/user", { withCredentials: true })
                 .then(() => {
                     // setTimeout(()=>{
                         console.log("AUTHHOC :True ")
