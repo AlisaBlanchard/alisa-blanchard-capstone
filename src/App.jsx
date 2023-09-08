@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-// import Home from './pages/home/home';
 import './styles/global.scss';
 import Home from './pages/home/home';
 import UserDashboard from './components/userDashboard/userDashboard';
@@ -13,12 +12,13 @@ import Tracker from './pages/tracker/tracker';
 import TrackerTemplateBuilder from './components/trackerTemplateBuilder/trackerTemplateBuilder';
 import SingleShopItem from './components/singleShopItem/singleShopItem';
 import Article from './components/article/article';
-import LogIn from './components/logIn/logIn';
-import LogOut from './components/logOut/logOut';
-import { useEffect, useState } from 'react';
-import { gapi } from 'gapi-script';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+// import LogIn from './components/logIn/logIn';
+// import LogOut from './components/logOut/logOut';
+import React, { useEffect, useState } from 'react';
+// import { gapi } from 'gapi-script';
+// import { GoogleOAuthProvider } from '@react-oauth/google';
 import axios from 'axios';
+// axios.defaults.withcredntials = true;
 
 
 function App() {
@@ -27,18 +27,15 @@ function App() {
 
   useEffect(() => {
     //Fetch user information from the backend
-
-    const URL = "http://localhost:5050";
-
     axios
-    .get(`${URL}/user`, { withCredentials: true})
+      .get('http://localhost:5050/user', { withCredentials: true})
 
-    .then((res) => {
-        setUser(res.data.user);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then((res) => {
+          setUser(res.data.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
 
