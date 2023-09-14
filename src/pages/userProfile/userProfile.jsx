@@ -57,4 +57,4 @@ function UserProfile() {
     )
 }
 
-export default AuthHoc(UserProfile);
+export default UserProfile;
