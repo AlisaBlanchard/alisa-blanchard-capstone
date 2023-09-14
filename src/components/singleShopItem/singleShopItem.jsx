@@ -10,7 +10,6 @@ function SingleShopItem() {
 
     //State
     const [itemInfo, setItemInfo]= useState({});
-    // console.log(itemInfo);
 
     const {itemId} = useParams();
 
@@ -22,7 +21,7 @@ function SingleShopItem() {
         .get(`${URL}/merchandise`)
 
         .then((res) => {
-            const items = res.data;
+            const items = res.data.merchandise;
 
             const foundItem = items.find((item) => item.itemId == itemId);
             
