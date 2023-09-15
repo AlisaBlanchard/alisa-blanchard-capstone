@@ -11,10 +11,10 @@ function Tracker() {
     //State
     const [trackers, setTrackers] = useState([]);
     const [userTrackers, setUserTrackers] = useState([]);
-    
+    // console.log(trackers);
+    // console.log(userTrackers);
 
     const {userId} = useParams();
-    // console.log(trackers);
 
     //GET to get all trackers by specific user for dropdown selection
     useEffect(() => {
@@ -24,26 +24,26 @@ function Tracker() {
         .get(`${URL}/trackers`)
 
         .then((res) => {
-            const users = res.data;
+            const users = res.data.Trackers;
 
             const userData = users.filter((user) => user.userId == userId);
-
+            // console.log(userData);
             setUserTrackers(userData);
 
             //Using the userData array, pull out the names of all available trackers for use in dropdown
-            const userTrackers = [];
+            const trackerNames = [];
 
             userData.forEach((tracker) => {
                 const trackerObj = tracker;
-                if (!userTrackers.includes(trackerObj)) {
-                    userTrackers.push(trackerObj);
+                if (!trackerNames.includes(trackerObj)) {
+                    trackerNames.push(trackerObj);
                 }
             });
 
             // console.log(userTrackers);
             
             //Setting state
-            setTrackers(userTrackers);
+            setTrackers(trackerNames);
 
         });
     }, []);
@@ -67,11 +67,12 @@ function Tracker() {
                 <div className="tracker__cta--wrap">
                     <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler}>
                         <option value='tracker default'>Pick Your Tracker</option>
-                    {trackers.map((tracker) => {
-                        return(
-                                <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
-                        )
-                    })}
+                        {trackers.map((tracker) => {
+                            console.log(trackers);
+                            return(
+                                    <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
+                            )
+                        })}
                     </select>
                     <Link to={`/${userId}/tracker/build`}>
                         <div className='new__tracker'>Create New Tracker</div >
