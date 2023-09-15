@@ -11,7 +11,6 @@ import shopHero from '../../assets/Images/heroImages/rachel-mcdermott-mTJ0-5tMs6
 function Shop() {
     //State
     const [shopItems, setShopItems] = useState([]);
-    console.log(shopItems);
 
     //GET to retrieve full merchandise item array
     useEffect(() => {
@@ -21,8 +20,7 @@ function Shop() {
         .get(`${URL}/merchandise`)
 
         .then((res) => {
-            const items = res.data;
-            console.log(res.data);
+            const items = res.data.merchandise;
             
             setShopItems(items);
         });
@@ -42,8 +40,6 @@ function Shop() {
             </div>
             <div className="merch">
                 {shopItems.map(item => {
-                    console.log(item.price);
-
                     const itemId = item.itemId;
 
                     return(
