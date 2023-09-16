@@ -10,16 +10,7 @@ import BarChart from '../../components/barChart/barChart';
 function UserProfile() {
     //State
     const [details, setDetails] = useState({});
-    const [userTrackers, setUserTrackers] = useState([]);
-    const [chartData, setChartData] = useState({
-        labels: userTrackers.map((obj) => obj.label),
-        datasets: [{
-            label:userTrackers.map((obj) => obj.label),
-            data: userTrackers.map((obj) => obj.value),
-
-        }]
-    });
-    console.log(chartData);
+    // console.log(details);
 
     const { userId } = useParams();
 
@@ -31,7 +22,7 @@ function UserProfile() {
         .get(`${URL}/users`)
 
         .then((res) => {
-            const users = res.data;
+            const users = res.data.users;
             // console.log(res.data);
 
             const foundUser = users.find((user) => user.userId == userId);
@@ -39,29 +30,6 @@ function UserProfile() {
             setDetails(foundUser);
         });
     }, []);
-
-    //GET to retrieve trackers array
-    useEffect(() => {
-        const URL = "http://localhost:5050";
-
-        axios
-        .get(`${URL}/trackers`)
-
-        .then((res) => {
-            const users = res.data;
-            // console.log(res.data);
-
-            //Find Specific user's tracker data by userId
-            const foundUser = users.find((user) => user.userId == userId);
-
-            //Map over foundUser tracker data and make a new array holding the Session Data array
-            const trackerData = foundUser.sessions.map((session) => session.data);
-
-            // console.log(trackerData);
-            setUserTrackers(trackerData);
-        });
-    }, []);
-
 
     // console.log(details);
 
@@ -71,17 +39,25 @@ function UserProfile() {
             <div className="user__wrap">
             <h1>{details.username}</h1>
                 <div className="user__info--wrap">
-                    <div src="#" alt="Profile Picture" className='user__img' />
+                    <img src={details.profPic} alt="Profile Picture" className='user__img' />
                     <div className="user__info">
-                        <p>Name: {details.name}</p>
-                        <p>Birthday: {details.birthdate}</p>
-                        <p>Sessions: {details.tracking_sessions}</p>
+                        <p>Name: {details.firstName} {details.lastName}</p>
+                        {/* <p>Sessions: {details.tracking_sessions}</p> */}
                     </div>
                 </div>
             </div>
             <div className="data__wrap">
                 <div className="action__wrap">
-                    <div className="tracker__dropdown">Tracker Dropdown</div>
+                    <div className="tracker__dropdown">
+                        <select name="tracker__dropdown" id="tracker__dropdown" onChange={trackerChangeHandler}>
+                            {trackerDetails.map((tracker) => {
+                                return(
+                                    <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
+                                )
+                            })}
+
+                        </select>
+                    </div>
                     <div className="data__button">See My Data</div>
                 </div>
                 <div className="data__visualizer"><BarChart /></div>

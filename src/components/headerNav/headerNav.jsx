@@ -46,11 +46,20 @@ function HeaderNav({user, setUser}) {
 
       <ul className="header_nav">
         <li>
-          <NavLink to="/">SHOP</NavLink>
+          <NavLink to="/shop">SHOP</NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={visibilityHandler}>LOG {!userId ? 'OUT' : 'IN'}</NavLink>
+          {user ? (
+              <div className="user__wrap">
+                <p className="welcome">Welcome, {user.displayName}</p>
+                <button onClick={handleLogout}>LOG OUT</button>
+              </div>
+
+            ) : (
+              <a href="http://localhost:5050/auth/google">LOG IN</a>
+            )}
         </li>
+
       </ul>
       {logInVisibility &&
         <LogInForm 
