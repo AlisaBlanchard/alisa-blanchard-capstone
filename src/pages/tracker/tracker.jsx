@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 //Tracker Page
 
 function Tracker() {
+    const {userId, trackerId} = useParams();
+
     //State
     const [trackers, setTrackers] = useState([]);
     const [userTrackers, setUserTrackers] = useState([]);
@@ -16,7 +18,6 @@ function Tracker() {
     // console.log(trackers);
     // console.log(userTrackers);
 
-    const {userId, trackerId} = useParams();
 
     //GET to get all trackers by specific user for dropdown selection
     useEffect(() => {
@@ -56,6 +57,8 @@ function Tracker() {
     }
 
 
+
+
     return(
         <section className="tracker">
             <div className="title__wrap">
@@ -68,7 +71,7 @@ function Tracker() {
                     <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler}>
                         <option value='tracker default'>Pick Your Tracker</option>
                         {trackers.map((tracker) => {
-                            console.log(trackers);
+                            // console.log(trackers);
                             return(
                                     <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
                             )
@@ -81,6 +84,8 @@ function Tracker() {
                 {/* {!trackerIdVal &&               */}
                     <TrackerForm 
                         userTrackers={userTrackers}
+                        userId={userId}
+                        trackerId={trackerId}
                     />
                 {/* }    */}
             </div>
