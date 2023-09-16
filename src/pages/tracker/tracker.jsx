@@ -11,10 +11,12 @@ function Tracker() {
     //State
     const [trackers, setTrackers] = useState([]);
     const [userTrackers, setUserTrackers] = useState([]);
+    // const [trackerIdVal, setTrackerIdVal] = useState(false);
+    
     // console.log(trackers);
     // console.log(userTrackers);
 
-    const {userId} = useParams();
+    const {userId, trackerId} = useParams();
 
     //GET to get all trackers by specific user for dropdown selection
     useEffect(() => {
@@ -24,26 +26,24 @@ function Tracker() {
         .get(`${URL}/trackers`)
 
         .then((res) => {
-            const users = res.data.Trackers;
+            const trackers = res.data.Trackers;
 
-            const userData = users.filter((user) => user.userId == userId);
-            // console.log(userData);
-            setUserTrackers(userData);
+            const trackerData = trackers.filter((tracker) => tracker.userId == userId);
+            setUserTrackers(trackerData);
 
-            //Using the userData array, pull out the names of all available trackers for use in dropdown
+            //Using the trackerData array, pull out the names of all available trackers for use in dropdown
             const trackerNames = [];
 
-            userData.forEach((tracker) => {
+            trackerData.forEach((tracker) => {
                 const trackerObj = tracker;
                 if (!trackerNames.includes(trackerObj)) {
                     trackerNames.push(trackerObj);
                 }
             });
-
-            // console.log(userTrackers);
             
             //Setting state
             setTrackers(trackerNames);
+            // setTrackerIdVal(trackerId);
 
         });
     }, []);
@@ -77,10 +77,12 @@ function Tracker() {
                     <Link to={`/${userId}/tracker/build`}>
                         <div className='new__tracker'>Create New Tracker</div >
                     </Link>
-                </div>                
-                <TrackerForm 
-                    userTrackers={userTrackers}
-                />
+                </div> 
+                {/* {!trackerIdVal &&               */}
+                    <TrackerForm 
+                        userTrackers={userTrackers}
+                    />
+                {/* }    */}
             </div>
         </section>
     )

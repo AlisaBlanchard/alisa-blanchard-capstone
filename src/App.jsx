@@ -62,6 +62,7 @@ function App() {
           <Route path='/about' element={<About />} />
 
           {/* Tracker Routes */}
+          <Route path='/:userId/tracker' element={<Tracker />} />
           <Route path='/:userId/tracker/:trackerId' element={<Tracker />} />
           <Route path='/:userId/tracker/build' element={<TrackerTemplateBuilder />} />
         </Routes>

@@ -16,7 +16,7 @@ function TrackerForm() {
     const [template, setTemplate] = useState([]);
     const [input, setInput] = useState([]);
 
-    console.log(template);
+    // console.log(tracker);
 
     const userInfo = useParams();
 
@@ -34,7 +34,8 @@ function TrackerForm() {
         .then((res) => {
 
             const trackerData = res.data.trackers;
-            console.log(trackerData);
+            // console.log(trackerData);
+
             setTracker(trackerData);
             setTemplate(trackerData.template);
         });

@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import { v4 as uuidv4 } from "uuid";
-// import os from 'os';
+import { Link } from "react-router-dom";
 
 //Tracker Template Builder Component
 
@@ -73,7 +73,9 @@ function TrackerTemplateBuilder() {
 
   return (
     <section className="templateBuilder">
-      <img src={backArrow} alt="Back Arrow" />
+      <Link to={`/${userId}/tracker`}>
+        <img src={backArrow} alt="Back Arrow" />
+      </Link>
       <form action="submit" onSubmit={handleSubmitForm}>
         <h1>Create New Tracker</h1>
 
