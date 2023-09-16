@@ -10,7 +10,7 @@
     margin: .5rem;
     border: 1px solid variables.$primary-text-color;
     border-radius: 5px;
-    padding: .5rem;
+    padding: .5rem .5rem 1rem .5rem;
 
 
     img {
@@ -55,11 +55,10 @@
 
         p {
             text-align: right;
-            margin-bottom: 1.5rem;
         }
 
         button {
-            margin-left: 1.5rem;
+            margin:1rem 0 0 1.5rem;
         }
     }
 }
