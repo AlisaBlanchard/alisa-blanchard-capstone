@@ -7,11 +7,14 @@
     background-color: variables.$primary-background-color;
     display: flex;
     flex-direction: column;
+    padding-bottom: 1rem;
+    
 
     .title__wrap {
         display: flex;
         text-align: left;
         margin: 1rem 0;
+        align-self: center;
 
         h1 {
             margin: 0 .5rem 0 .5rem;
@@ -26,6 +29,9 @@
     }
 
     .tracker__wrap {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
 
         .tracker__cta--wrap {
             display: flex;
@@ -52,6 +58,24 @@
             }
     
         }
+
+    }
+
+    @include tablet {
+        justify-content: center;
+
+        .title__wrap {
+
+        }
+
+        .tracker__wrap {
+
+
+        }
+
+    }
+
+    @include desktop {
 
     }
 }
