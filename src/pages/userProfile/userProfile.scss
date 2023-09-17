@@ -57,26 +57,30 @@
         padding-bottom: 2rem;
 
         .tracker__dropdown {
-            padding: .5rem 1rem;
-            color: variables.$primary-text-color;
-            border-radius: 5px;
-            background-color: variables.$primary-background-color;
-            border: 3px solid variables.$primary-element-background-color;
+
+            select {
+                padding: .75rem 2rem;
+                color: variables.$primary-text-color;
+                background-color: variables.$primary-background-color;
+                border: 3px solid variables.$primary-element-background-color;
+                width: 12rem;
+
+            }
         }
 
-        .data__button {
-            margin-top: 1rem;
-            padding: .5rem 1rem;
-            border-radius: 22px;
-            font-weight: bold;
-            color: variables.$primary-background-color;
-            background-color: variables.$primary-element-background-color;
-            text-transform: uppercase;
-        }
+        // .data__button {
+        //     margin-top: 1rem;
+        //     padding: .5rem 1rem;
+        //     border-radius: 22px;
+        //     font-weight: bold;
+        //     color: variables.$primary-background-color;
+        //     background-color: variables.$primary-element-background-color;
+        //     text-transform: uppercase;
+        // }
         
-        .data__visualizer {
-            display: none;
-        }
+        // .data__visualizer {
+        //     display: none;
+        // }
     }
     @include tablet {
         .user__wrap {
@@ -89,15 +93,18 @@
             .user__info--wrap {
                 display: flex;
                 flex-direction: row-reverse;
+                justify-content: space-between;
                 
                 .user__img {
-                    margin-right: 2rem;
+                    margin: 1rem 2rem 0 0;
                 }
         
                 .user__info {    
                     margin: 2rem 1.5rem 0 0;
                     width: 50%;
                     height: 50%;
+                    margin-left: 1rem;
+
 
                     p {
                         width: 100%;
@@ -109,6 +116,9 @@
         }
     
         .data__wrap {
+            display: flex;
+            flex-direction: row-reverse;
+            margin: 0 2rem;
 
             .action__wrap {
                 display: flex;
@@ -117,9 +127,13 @@
                 align-content: center;
 
                 .tracker__dropdown {
-                    // margin-top: 1rem;
                     height: 1.5rem;
-                    width: 12rem;
+
+                    select {
+                        width: 12rem;
+                    }
+
+            
                 }
         
                 .data__button {
@@ -133,11 +147,22 @@
             .data__visualizer {
                 display: flex;
                 background-color: variables.$primary-element-background-color;
-                margin: 2rem 2rem; 
+                margin-left: 1rem; 
                 height: 15rem;  
                 border-radius: 5px;
                 color: variables.$primary-background-color;
                 justify-content: center;
+                width: 100%;
+
+                .chart {
+                    display: flex;
+                    background-color: variables.$primary-background-color;
+                    margin: 1rem;
+                    padding: 3.5rem 1rem 1rem 1rem;
+                    justify-content: center;
+                    width: 100%;
+                    
+                }
             }
         }
     }
@@ -146,6 +171,7 @@
         padding: 0 4rem;
 
         .user__wrap {
+            margin-top:1rem;
     
             h1 {
             }

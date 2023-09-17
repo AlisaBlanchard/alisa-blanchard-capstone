@@ -18,10 +18,6 @@ function UserProfile() {
     const [userTrackers, setUserTrackers] = useState([]);
     const [trackerID, setTrackerID] = useState(trackerId);
 
-    
-    // console.log(details);
-    // console.log(userTrackers);
-
 
     //GET to retrieve Users array
     useEffect(() => {
@@ -32,7 +28,6 @@ function UserProfile() {
 
         .then((res) => {
             const users = res.data.users;
-            // console.log(res.data);
 
             const foundUser = users.find((user) => user.userId == userId);
             
@@ -44,29 +39,14 @@ function UserProfile() {
 
         .then((res) => {
             const trackers = res.data.Trackers;
-            // console.log(trackers);
 
             const trackerData = trackers.filter((tracker) => tracker.userId == userId);
-            // setUserTrackers(trackerData);
-
-            // //Using the trackerData array, pull out the names of all available trackers for use in dropdown
-            // const trackerNames = [];
-
-            // trackerData.forEach((tracker) => {
-            //     const trackerObj = tracker;
-            //     if (!trackerNames.includes(trackerObj)) {
-            //         trackerNames.push(trackerObj);
-            //     }
-            // });
+ 
             setUserTrackers(trackerData);
         });
-
-            
     }, []);
 
-    // console.log(details);
-
-    //Dropdown CHangehandler
+    //Dropdown Changehandler
     const trackerChangeHandler = (e) => {
         const selectedTracker = (e.target.options[e.target.selectedIndex].id);
         
@@ -101,13 +81,14 @@ function UserProfile() {
 
                         </select>
                     </div>
-                    <div className="data__button">See My Data</div>
                 </div>
                 {trackerID ? (
                     <div className="data__visualizer">
-                        <BarChart 
-                            userTrackers={userTrackers}
-                        />
+                        <div className="chart">
+                            <BarChart 
+                                userTrackers={userTrackers}
+                            />
+                        </div>
                     </div>
                  ) : (
                     <div>Choose a Tracker to Get Started</div>
