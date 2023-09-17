@@ -10,7 +10,7 @@
         // background-color: variables.$primary-element-background-color;
         margin-bottom: 1rem;
         position: relative;
-        height: 25rem;
+        height: 12rem;
 
         img {
             height: 100%;
@@ -57,7 +57,7 @@
     @include tablet {
 
         .hero {
-            // padding: 4rem 0;
+            height: 25rem;
             
             h1 {
                 margin-left: 5.5rem;
@@ -75,8 +75,6 @@
             flex-direction: row;
             justify-content: space-around;
             padding-top: 2rem;
-            .card {
-            }
         }
     }
     
@@ -84,30 +82,24 @@
     @include desktop {
 
         .hero {
-            padding: 7rem 0;
-            margin: 3rem 4rem;
             
-            h1 {
-                margin-left: 5.5rem;
-                
-            }
-    
-            p {
-                text-align: left;
-                margin-left: 5.5rem;
+            .hero__text {
+
+                h1 {                    
+                }
+        
+                p {
+                    text-align: left;
+                    margin-left: 5.5rem;
+                }
             }
         }
     
         .merch {
-            margin: 0 3rem 0 3rem;
-            flex-direction: row;
-            justify-content: space-around;
-            padding-top: 2rem;
             margin: 0 5rem 0 5rem;
 
-
-            .card {
-            }
-        }    }
+        }    
+    
+    }
 
 }

@@ -1,0 +1,53 @@
+.trackerForm {
+  margin: 1rem;
+  width: 14rem;
+}
+.trackerForm form .form__grid--wrap {
+  display: grid;
+  grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+  grid-template-columns: 7rem 7rem;
+  border: 2px solid #231b10;
+  border-radius: 5px;
+  width: 14rem;
+  background-color: #978f47;
+}
+.trackerForm form .form__grid--wrap .grid__header {
+  display: flex;
+  grid-column: 1/span 2;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.trackerForm form .form__grid--wrap .grid__header h2 {
+  font-size: 22px;
+  padding-top: 0.5rem;
+}
+.trackerForm form .form__grid--wrap .grid__header .submit {
+  background-color: #978f47;
+  display: flex;
+  margin: 0.6rem;
+  border-radius: 22px;
+  font-size: 13px;
+  height: 1.25rem;
+}
+.trackerForm form .form__grid--wrap .grid__row--wrap {
+  display: flex;
+  grid-column: 1/span 2;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-top: 2px solid #231b10;
+}
+.trackerForm form .form__grid--wrap .grid__row--wrap .grid__label {
+  border-right: 2px solid #231b10;
+  width: 100%;
+  text-align: left;
+}
+.trackerForm form .form__grid--wrap .grid__row--wrap .grid__label h3 {
+  font-size: 15px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+.trackerForm form .form__grid--wrap .grid__row--wrap .grid__input {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+  justify-content: space-around;
+}/*# sourceMappingURL=trackerForm.css.map */

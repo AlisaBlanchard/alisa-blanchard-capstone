@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../src/components/itemCard/itemCard.scss","../src/styles/_variables.scss"],"names":[],"mappings":"AAKA;EACI;EACA;EACA,kBCHuB;EDIvB;EACA;EACA;EACA;EACA;;AAEA;EACI,kBCXmB;EDYnB;EACA;;AAIJ;EACI,kBClBmB;EDmBnB;EACA;EACA;EACA;;AAEA;EACI;;AAEA;EACI","file":"itemCard.css"}

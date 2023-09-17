@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+}
+
+.app {
+  background-color: #faf9e9;
+}
+
+h1 {
+  color: #231b10;
+}
+
+h2 {
+  color: #231b10;
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 13px;
+  color: #231b10;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    color: #231b10;
+  }
+  h2 {
+    color: #231b10;
+  }
+  p {
+    font-size: 13px;
+    color: #231b10;
+  }
+}/*# sourceMappingURL=global.css.map */

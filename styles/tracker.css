@@ -1,0 +1,50 @@
+.tracker {
+  background-color: #faf9e9;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+.tracker .title__wrap {
+  display: flex;
+  text-align: left;
+  margin: 1rem 0;
+  align-self: center;
+}
+.tracker .title__wrap h1 {
+  margin: 0 0.5rem 0 0.5rem;
+}
+.tracker .title__wrap p {
+  font-size: 13px;
+  flex-wrap: wrap;
+  padding-left: 0.5rem;
+  border-left: 1px solid #231b10;
+}
+.tracker .tracker__wrap {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.tracker .tracker__wrap .tracker__cta--wrap {
+  display: flex;
+  margin: 0 1rem;
+}
+.tracker .tracker__wrap .tracker__cta--wrap .tracker__dropdown {
+  background-color: #978f47;
+  display: flex;
+  margin: 0.5rem;
+  border-radius: 22px;
+  font-size: 13px;
+}
+.tracker .tracker__wrap .tracker__cta--wrap a {
+  text-decoration: none;
+  color: #978f47;
+}
+.tracker .tracker__wrap .tracker__cta--wrap .new__tracker {
+  margin-left: 0.5rem;
+  font-size: 13px;
+}
+@media (min-width: 768px) {
+  .tracker {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=tracker.css.map */
