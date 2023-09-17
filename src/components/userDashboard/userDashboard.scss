@@ -7,7 +7,7 @@
 
 #userDashboard {
     background-color: variables.$primary-background-color;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
 
     h1 {
         display: flex;
@@ -41,6 +41,7 @@
                 display: flex;
                 background-color: variables.$primary-element-background-color;
                 height: 3rem;
+                padding: 0;
                 width: 6.75rem;
                 align-items: center;
                 justify-content: center;
@@ -79,6 +80,8 @@
                 position: absolute;
                 align-self: center;
                 margin-left: 1rem;
+                padding: .5rem;
+                background-color: variables.$primary-text-color;
                 
             }
         }
@@ -87,10 +90,219 @@
     .shop__cta {
         display: flex;
         background-color: variables.$primary-element-background-color;
-        margin: .25rem 1rem 4rem 1rem;
+        margin: .25rem 1rem 1rem 1rem;
         height: 3rem;
         justify-content: center;
         align-items: center;
         border-radius: 5px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        p {
+            position: absolute;
+            font-size: 30px;
+            opacity: 75%;
+        }
+    }
+
+    @include tablet {
+        padding: .5rem 6rem 2rem 6rem;
+
+        h1 {
+            display: flex;
+            margin: 0 1rem .5rem 1rem;
+            padding-top: 1rem;
+            color: variables.$primary-text-color;
+        }
+    
+        p {
+            font-size: 13px;
+            font-weight: bold;
+            color: variables.$primary-background-color;
+        }
+    
+        a {
+            text-decoration: none;
+        }
+    
+        .dashboard__wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 .5rem 0 .5rem;
+
+    
+            .tracker__wrap {
+                display: flex;
+                flex-direction: column;
+                margin: .5rem .5rem 0 .5rem;
+                justify-content:flex-start;
+                width: 50%;
+    
+                .tracker {
+                    display: flex;
+                    background-color: variables.$primary-element-background-color;
+                    height: 3rem;
+                    padding: 0;
+                    width: 16rem;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 22px;
+                    margin-bottom: 1.5rem;
+                    margin-right: 0;
+                }
+    
+                .tracker__data {
+                    display: flex;
+                    background-color: variables.$primary-element-background-color;
+                    height: 3rem;
+                    width: 16rem;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 22px;
+                }
+            }
+    
+            .article {
+                background-color: variables.$primary-element-background-color;
+                margin: .5rem .5rem .5rem 0;
+                height: 8rem;
+                border-radius: 5px;
+                position: relative;
+                display: flex;
+    
+                img {
+                    height: 100%; 
+                    width: 100%;
+                    border-radius: 5px;
+                    
+                    }
+    
+                p {
+                    position: absolute;
+                    align-self: center;
+                    margin-left: 1rem;
+                    padding: .5rem;
+                    background-color: variables.$primary-text-color;
+                    
+                }
+            }
+        }
+    
+        .shop__cta {
+            display: flex;
+            background-color: variables.$primary-element-background-color;
+            margin: .25rem 1rem 1rem 1rem;
+            height: 4rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+    
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 5px;
+            }
+    
+            p {
+                position: absolute;
+                font-size: 30px;
+                opacity: 75%;
+            }
+        }
+    
+    }
+
+    @include desktop {
+        padding: 1rem 17rem 2rem 17rem;
+    
+        .dashboard__wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 .5rem 0 .5rem;
+
+    
+            .tracker__wrap {
+                display: flex;
+                flex-direction: column;
+                margin: .5rem .5rem 0 .5rem;
+                justify-content:flex-start;
+                width: 50%;
+    
+                .tracker {
+                    display: flex;
+                    background-color: variables.$primary-element-background-color;
+                    height: 4rem;
+                    padding: 0;
+                    width: 18rem;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 22px;
+                    margin-bottom: 1.5rem;
+                    margin-right: 0;
+                }
+    
+                .tracker__data {
+                    display: flex;
+                    background-color: variables.$primary-element-background-color;
+                    height: 4rem;
+                    width: 18rem;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 22px;
+                }
+            }
+    
+            .article {
+                background-color: variables.$primary-element-background-color;
+                margin: .5rem .5rem .5rem 0;
+                height: 10rem;
+                border-radius: 5px;
+                position: relative;
+                display: flex;
+    
+                img {
+                    height: 100%; 
+                    width: 100%;
+                    border-radius: 5px;
+                    
+                    }
+    
+                p {
+                    position: absolute;
+                    align-self: center;
+                    margin-left: 1rem;
+                    padding: .5rem;
+                    background-color: variables.$primary-text-color;
+                    
+                }
+            }
+        }
+    
+        .shop__cta {
+            display: flex;
+            background-color: variables.$primary-element-background-color;
+            margin: .25rem 1rem 1rem 1rem;
+            height: 5rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+    
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 5px;
+            }
+    
+            p {
+                position: absolute;
+                font-size: 30px;
+                opacity: 75%;
+            }
+        }
     }
 }
