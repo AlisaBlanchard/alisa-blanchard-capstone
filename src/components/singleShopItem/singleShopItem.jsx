@@ -3,6 +3,8 @@ import '../../styles/global.scss';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import backArrow from '../../assets/icons/arrow-left.svg';
+import { Link } from 'react-router-dom';
 
 //Single Shop Item Component
 
@@ -33,7 +35,9 @@ function SingleShopItem() {
     return(
         <section className="single__item">
             <div className="back__wrap">
-                <img src="" alt="back arrow" />
+                <Link to='/shop'>
+                    <img src={backArrow} alt="back arrow" />
+                </Link>
                 <h3>Back to Shopping</h3>
             </div>
             <div className="item__info--wrap">

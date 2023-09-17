@@ -7,10 +7,10 @@
     background-color: variables.$primary-background-color;
 
     .hero {
-        background-color: variables.$primary-element-background-color;
+        // background-color: variables.$primary-element-background-color;
         margin-bottom: 1rem;
         position: relative;
-        height: 11rem;
+        height: 25rem;
 
         img {
             height: 100%;
@@ -19,7 +19,7 @@
 
         .hero__text {
             position: absolute;
-            top: 2rem;
+            top: 6rem;
             margin: 0 1rem;
             text-align: left;
 
@@ -57,7 +57,7 @@
     @include tablet {
 
         .hero {
-            padding: 4rem 0;
+            // padding: 4rem 0;
             
             h1 {
                 margin-left: 5.5rem;
