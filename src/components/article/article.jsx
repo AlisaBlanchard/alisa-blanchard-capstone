@@ -19,11 +19,10 @@ function Article() {
         .get(`${URL}/articles`)
 
         .then((res) => {
-            const articles = res.data;
+            const articles = res.data.articles;
 
             const foundArticle = articles.find((article) => article.articleId == articleId);
             setArticle(foundArticle);
-
         });
     }, []);
 
