@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import "../userDashboard/userDashboard.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import shopNow from '../../assets/Images/heroImages/rachel-mcdermott-mTJ0-5tMs6A-unsplash.jpg';
 
 
 
@@ -60,6 +61,7 @@ function UserDashboard() {
 
       <Link to='/shop'>
         <div className="shop__cta">
+          <img src={shopNow} alt="Shop Now image" />
           <p>Shop Now</p>
         </div>
       </Link>
