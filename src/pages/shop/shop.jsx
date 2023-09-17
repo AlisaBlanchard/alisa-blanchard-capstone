@@ -31,11 +31,11 @@ function Shop() {
     return(
         <section className="shop">
             <div className="hero">
-                <img src={shopHero} alt="" />
+                <img src={shopHero} alt="Hero Image" />
 
                 <div className="hero__text">
-                    <h1>Call To Action</h1>
-                    <p>Hero Text about quality of life x products you can buy below!</p>
+                    <h1>Shop Our Merch</h1>
+                    <p>Elevate Your Life: Unlock Precision, Achieve Progress</p>
                 </div>
             </div>
             <div className="merch">
