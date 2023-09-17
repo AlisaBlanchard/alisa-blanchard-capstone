@@ -4,19 +4,24 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AuthHoc from '../../components/AuthHoc/AuthHoc';
 import BarChart from '../../components/barChart/barChart';
+import { Link, useNavigate} from 'react-router-dom';
+
 
 //UserProfile Page
 
 function UserProfile() {
+    const navigate = useNavigate();
+    const { userId, trackerId } = useParams();
+
     //State
     const [details, setDetails] = useState({});
     const [userTrackers, setUserTrackers] = useState([]);
+    const [trackerID, setTrackerID] = useState(trackerId);
+
     
     // console.log(details);
     // console.log(userTrackers);
 
-
-    const { userId } = useParams();
 
     //GET to retrieve Users array
     useEffect(() => {
@@ -44,16 +49,16 @@ function UserProfile() {
             const trackerData = trackers.filter((tracker) => tracker.userId == userId);
             // setUserTrackers(trackerData);
 
-            //Using the trackerData array, pull out the names of all available trackers for use in dropdown
-            const trackerNames = [];
+            // //Using the trackerData array, pull out the names of all available trackers for use in dropdown
+            // const trackerNames = [];
 
-            trackerData.forEach((tracker) => {
-                const trackerObj = tracker;
-                if (!trackerNames.includes(trackerObj)) {
-                    trackerNames.push(trackerObj);
-                }
-            });
-            setUserTrackers(trackerNames);
+            // trackerData.forEach((tracker) => {
+            //     const trackerObj = tracker;
+            //     if (!trackerNames.includes(trackerObj)) {
+            //         trackerNames.push(trackerObj);
+            //     }
+            // });
+            setUserTrackers(trackerData);
         });
 
             
@@ -63,9 +68,11 @@ function UserProfile() {
 
     //Dropdown CHangehandler
     const trackerChangeHandler = (e) => {
-        console.log(e);
+        const selectedTracker = (e.target.options[e.target.selectedIndex].id);
+        
+        setTrackerID(selectedTracker);
 
-
+        navigate(`/profile/${userId}/${selectedTracker}`);
     };
 
 
@@ -88,7 +95,7 @@ function UserProfile() {
                         <select name="tracker__dropdown" id="tracker__dropdown" onChange={trackerChangeHandler}>
                             {userTrackers.map((tracker) => {
                                 return(
-                                    <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
+                                    <option value={tracker.tracker_name} id={tracker.trackerId} key={tracker.trackerId}>{tracker.tracker_name}</option>
                                 )
                             })}
 
@@ -96,11 +103,15 @@ function UserProfile() {
                     </div>
                     <div className="data__button">See My Data</div>
                 </div>
-                <div className="data__visualizer">
-                    <BarChart 
-                        userTrackers={userTrackers}
-                    />
-                </div>
+                {trackerID ? (
+                    <div className="data__visualizer">
+                        <BarChart 
+                            userTrackers={userTrackers}
+                        />
+                    </div>
+                 ) : (
+                    <div>Choose a Tracker to Get Started</div>
+                )}
             </div>
         </section>
     )

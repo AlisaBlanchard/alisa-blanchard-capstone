@@ -17,8 +17,7 @@ function TrackerForm({setTrackerID, trackerID}) {
     //State
     const [tracker, setTracker] = useState({});
     const [template, setTemplate] = useState([]);
-    const [trackerNames, setTrackerNames] = useState([]);
-    const [input, setInput] = useState([]);
+    // const [input, setInput] = useState([]);
     const [formData, setFormData] = useState({
         trackerName: "",
         userId: userId,
