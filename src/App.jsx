@@ -53,6 +53,8 @@ function App() {
 
           {/* User Profile */}
           <Route path='/profile/:userId' element={<UserProfile />} />
+          <Route path='/profile/:userId/:trackerId' element={<UserProfile />} />
+
 
           {/* Shop Routes */}
           <Route path='/shop' element={<Shop />} />

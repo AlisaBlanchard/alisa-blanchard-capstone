@@ -10,7 +10,11 @@ import BarChart from '../../components/barChart/barChart';
 function UserProfile() {
     //State
     const [details, setDetails] = useState({});
+    const [userTrackers, setUserTrackers] = useState([]);
+    
     // console.log(details);
+    // console.log(userTrackers);
+
 
     const { userId } = useParams();
 
@@ -29,9 +33,41 @@ function UserProfile() {
             
             setDetails(foundUser);
         });
+        
+        axios
+        .get(`${URL}/trackers`)
+
+        .then((res) => {
+            const trackers = res.data.Trackers;
+            // console.log(trackers);
+
+            const trackerData = trackers.filter((tracker) => tracker.userId == userId);
+            // setUserTrackers(trackerData);
+
+            //Using the trackerData array, pull out the names of all available trackers for use in dropdown
+            const trackerNames = [];
+
+            trackerData.forEach((tracker) => {
+                const trackerObj = tracker;
+                if (!trackerNames.includes(trackerObj)) {
+                    trackerNames.push(trackerObj);
+                }
+            });
+            setUserTrackers(trackerNames);
+        });
+
+            
     }, []);
 
     // console.log(details);
+
+    //Dropdown CHangehandler
+    const trackerChangeHandler = (e) => {
+        console.log(e);
+
+
+    };
+
 
 
     return (
@@ -50,7 +86,7 @@ function UserProfile() {
                 <div className="action__wrap">
                     <div className="tracker__dropdown">
                         <select name="tracker__dropdown" id="tracker__dropdown" onChange={trackerChangeHandler}>
-                            {trackerDetails.map((tracker) => {
+                            {userTrackers.map((tracker) => {
                                 return(
                                     <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
                                 )
@@ -60,7 +96,11 @@ function UserProfile() {
                     </div>
                     <div className="data__button">See My Data</div>
                 </div>
-                <div className="data__visualizer"><BarChart /></div>
+                <div className="data__visualizer">
+                    <BarChart 
+                        userTrackers={userTrackers}
+                    />
+                </div>
             </div>
         </section>
     )
