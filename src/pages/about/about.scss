@@ -11,7 +11,7 @@
         background-color: variables.$primary-element-background-color;
         text-align: left;
         position: relative;
-        height: 11rem;
+        height: 12rem;
 
 
         img {
@@ -25,7 +25,7 @@
             top: 2rem;
 
             h1 {
-                margin-top: 0;
+                margin: .5rem;
             }
     
             h2 {
@@ -44,8 +44,10 @@
         p {
             background-color: variables.$primary-element-background-color;
             font-size: 13px;
+            font-weight: bold;
             padding: .5rem;
             border-radius: 5px;
+            color: variables.$primary-background-color;
         }
 
         img {
@@ -53,13 +55,56 @@
         }
     }
 
-    .feedback__cta {
-        background-color: variables.$primary-element-background-color;
-        display: flex;
-        margin: .5rem;
-        border-radius: 22px;
-        font-size: 13px;
 
+    @include tablet {
 
+        .hero {
+            height: 20rem;
+
+            .hero__text {
+                padding: 1rem;
+                position: absolute;
+                top:5rem;
+                left: 4rem;
+
+                h1 {
+                    top:5rem;
+                    left: 5rem;
+                }
+        
+                h2 {
+                    font-size: 20px;
+                }
+            }
+    
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 1rem;
+    
+            p {
+                background-color: variables.$primary-element-background-color;
+                font-size: 13px;
+                font-weight: bold;
+                padding: .5rem;
+                border-radius: 5px;
+                color: variables.$primary-background-color;
+            }
+    
+            img {
+    
+            }
+        }
+    
+    }
+
+    @include desktop {
+
+        .article {
+            margin: 3rem;
+        }
     }
 }
