@@ -37,7 +37,7 @@ function UserDashboard() {
       <h1>Welcome Back!</h1>
       <div className="dashboard__wrap">
         <div className="tracker__wrap">
-          <Link to={`/${userId}/tracker/001`}>
+          <Link to={`/${userId}/tracker`}>
             <div className="tracker">
               <p>New Tracker Session</p>
             </div>

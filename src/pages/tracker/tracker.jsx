@@ -3,19 +3,20 @@ import TrackerForm from '../../components/trackerForm/trackerForm';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 //Tracker Page
 
 function Tracker() {
     const {userId, trackerId} = useParams();
 
+    const navigate = useNavigate();
     //State
     const [trackers, setTrackers] = useState([]);
-    const [userTrackers, setUserTrackers] = useState([]);
-    // const [trackerIdVal, setTrackerIdVal] = useState(false);
-    
-    // console.log(trackers);
+    const [trackerID, setTrackerID] = useState(trackerId);
+
+
+    // console.log(trackerID);
     // console.log(userTrackers);
 
 
@@ -30,30 +31,19 @@ function Tracker() {
             const trackers = res.data.Trackers;
 
             const trackerData = trackers.filter((tracker) => tracker.userId == userId);
-            setUserTrackers(trackerData);
-
-            //Using the trackerData array, pull out the names of all available trackers for use in dropdown
-            const trackerNames = [];
-
-            trackerData.forEach((tracker) => {
-                const trackerObj = tracker;
-                if (!trackerNames.includes(trackerObj)) {
-                    trackerNames.push(trackerObj);
-                }
-            });
             
             //Setting state
-            setTrackers(trackerNames);
-            // setTrackerIdVal(trackerId);
+            setTrackers(trackerData);
 
         });
     }, []);
 
     const trackerChangeHandler = (e) => {
-        console.log(e.target);
+        const selectedTracker = (e.target.options[e.target.selectedIndex].id);
+        
+        setTrackerID(selectedTracker);
 
-        // const url = new URL(`http://localhost:3000/${userId}/${trackerId}`)
-
+        navigate(`/${userId}/tracker/${selectedTracker}`);
     }
 
 
@@ -68,12 +58,12 @@ function Tracker() {
 
             <div className="tracker__wrap">
                 <div className="tracker__cta--wrap">
-                    <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler}>
+                    <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler} >
                         <option value='tracker default'>Pick Your Tracker</option>
                         {trackers.map((tracker) => {
                             // console.log(trackers);
                             return(
-                                    <option value={tracker.tracker_name} key={tracker.trackerId}>{tracker.tracker_name}</option>
+                                    <option value={tracker.tracker_name} id={tracker.trackerId} key={tracker.trackerId}>{tracker.tracker_name}</option>
                             )
                         })}
                     </select>
@@ -81,13 +71,16 @@ function Tracker() {
                         <div className='new__tracker'>Create New Tracker</div >
                     </Link>
                 </div> 
-                {/* {!trackerIdVal &&               */}
+                {trackerID ? ( 
                     <TrackerForm 
-                        userTrackers={userTrackers}
                         userId={userId}
-                        trackerId={trackerId}
+                        trackerID={trackerID}
+                        setTrackerID={setTrackerID}
                     />
-                {/* }    */}
+                    ) : (
+                        <div>Choose a Tracker to Get Started</div>
+                    )
+                }
             </div>
         </section>
     )

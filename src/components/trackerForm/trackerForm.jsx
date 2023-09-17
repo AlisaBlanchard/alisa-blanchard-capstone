@@ -9,15 +9,20 @@ import happy from '../../assets/icons/smile.svg';
 
 //Tracker Form Component
 
-function TrackerForm({userId, trackerId}) {
+function TrackerForm({setTrackerID, trackerID}) {
+    // console.log(trackerId);
+    const {userId, trackerId} = useParams();
+
 
     //State
     const [tracker, setTracker] = useState({});
     const [template, setTemplate] = useState([]);
+    const [trackerNames, setTrackerNames] = useState([]);
     const [input, setInput] = useState([]);
     const [formData, setFormData] = useState({
         trackerName: "",
         userId: userId,
+        trackerId: trackerId,
         label1: "",
         method1: "",
         label2: "",
@@ -29,26 +34,32 @@ function TrackerForm({userId, trackerId}) {
     
     });
 
+    useEffect(() => {
+        setTrackerID(trackerID);
 
-    // console.log(tracker);
+    }, [trackerID])
+
+    console.log(trackerID);
 
     //GET to retrieve tracker info by userId & trackerId
     useEffect(() => {
         const URL = "http://localhost:5050";
 
+        if (trackerId !== undefined) {
+            axios
+            .get(`${URL}/trackers/${userId}/${trackerID}`)
 
-        axios
-        .get(`${URL}/trackers/${userId}/${trackerId}`)
+            .then((res) => {
 
-        .then((res) => {
+                const trackerData = res.data.trackers;
+                console.log(trackerData);
 
-            const trackerData = res.data.trackers;
-            // console.log(trackerData);
+                setTracker(trackerData);
+                setTemplate(trackerData.template);
+            });
+        }
+    }, [trackerID]);
 
-            setTracker(trackerData);
-            setTemplate(trackerData.template);
-        });
-    }, []);
 
     //Change handler to handle form submission
     const handleSubmitForm = (e) => {
