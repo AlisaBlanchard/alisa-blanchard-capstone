@@ -1,0 +1,110 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Styling for About Page
+
+.about {
+    background-color: variables.$primary-background-color;
+
+    
+    .hero {
+        background-color: variables.$primary-element-background-color;
+        text-align: left;
+        position: relative;
+        height: 12rem;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero__text {
+            padding: 1rem;
+            position: absolute;
+            top: 2rem;
+
+            h1 {
+                margin: .5rem;
+            }
+    
+            h2 {
+                font-size: 20px;
+            }
+            }
+
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: .5rem;
+
+        p {
+            background-color: variables.$primary-element-background-color;
+            font-size: 13px;
+            font-weight: bold;
+            padding: .5rem;
+            border-radius: 5px;
+            color: variables.$primary-background-color;
+        }
+
+        img {
+
+        }
+    }
+
+
+    @include tablet {
+
+        .hero {
+            height: 20rem;
+
+            .hero__text {
+                padding: 1rem;
+                position: absolute;
+                top:5rem;
+                left: 4rem;
+
+                h1 {
+                    top:5rem;
+                    left: 5rem;
+                }
+        
+                h2 {
+                    font-size: 20px;
+                }
+            }
+    
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 1rem;
+    
+            p {
+                background-color: variables.$primary-element-background-color;
+                font-size: 13px;
+                font-weight: bold;
+                padding: .5rem;
+                border-radius: 5px;
+                color: variables.$primary-background-color;
+            }
+    
+            img {
+    
+            }
+        }
+    
+    }
+
+    @include desktop {
+
+        .article {
+            margin: 3rem;
+        }
+    }
+}

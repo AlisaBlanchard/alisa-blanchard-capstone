@@ -1,0 +1,85 @@
+.single__item {
+  margin: 1rem;
+}
+.single__item .back__wrap {
+  display: flex;
+}
+.single__item .back__wrap h3 {
+  font-size: 18px;
+  margin-left: 0.5rem;
+}
+.single__item .item__info--wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.single__item .item__info--wrap img {
+  background-color: #978f47;
+  height: 20rem;
+  width: 13rem;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+.single__item .item__info--wrap .item__info {
+  margin: 0 0.5rem;
+}
+.single__item .item__info--wrap .item__info h2 {
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 0.75rem;
+}
+.single__item .item__info--wrap .item__info p {
+  margin-bottom: 2rem;
+}
+.single__item .item__info--wrap .item__info h3 {
+  margin-bottom: 0.25rem;
+}
+.single__item .item__info--wrap .item__info .size__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.single__item .item__info--wrap .item__info .size__wrap div {
+  border: 1px solid #231b10;
+  padding: 0.25rem 0.5rem;
+  background-color: #978f47;
+}
+.single__item .item__info--wrap .item__info .add__item {
+  background-color: #978f47;
+  display: flex;
+  padding: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  border-radius: 22px;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .single__item .item__info--wrap {
+    flex-direction: row;
+  }
+  .single__item .item__info--wrap img {
+    height: 16rem;
+    width: 16rem;
+    margin: 1rem 4rem 0.5rem 1rem;
+  }
+  .single__item .item__info--wrap .item__info {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+  }
+  .single__item .item__info--wrap .item__info h2 {
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 0.75rem;
+  }
+  .single__item .item__info--wrap .item__info p {
+    margin-bottom: 2rem;
+  }
+  .single__item .item__info--wrap .item__info h3 {
+    margin-bottom: 0.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .single__item .item__info--wrap {
+    margin: 0 8rem;
+  }
+}/*# sourceMappingURL=singleShopItem.css.map */

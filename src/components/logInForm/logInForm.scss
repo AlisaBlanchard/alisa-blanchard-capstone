@@ -1,0 +1,72 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Log in component styling
+
+.logIn {
+    background-color: variables.$primary-background-color;
+    position: absolute;
+    margin: 1rem;
+    padding: .5rem 1rem 1.5rem 1rem;
+    top: 5.5rem;
+    border: 2px solid variables.$primary-text-color;
+    text-align: left;
+    z-index: 10;
+
+
+    .close__wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        h2 {
+
+        }
+
+        img {
+
+        }
+    }
+
+    form {
+
+        p {
+            text-align: center;
+            margin-bottom: 1rem;
+            
+        }
+
+        label {
+            font-size: 13px;
+        }
+
+        .email {
+            margin-bottom: .5rem;
+
+        }
+
+        .password {
+            margin-bottom: .5rem;
+        }
+
+        .button__wrap {
+            display: flex;
+            flex-direction: column;
+            margin-top: .5rem;
+
+            button {
+                margin-top: .5rem;
+            }
+
+
+            .signIn {
+
+            }
+    
+            .signUp {
+    
+            }
+            }
+    }
+
+}

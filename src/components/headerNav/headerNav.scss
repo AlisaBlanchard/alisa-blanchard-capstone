@@ -1,0 +1,117 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Headernav Styling
+
+nav {
+    display: flex;
+    background-color: variables.$primary-element-background-color;
+    height: 4.5rem;
+    align-items: center;
+
+    .logo {
+        height: 5rem;
+        width: 4rem;
+        position: absolute;
+        right: 6.3rem;
+        top: 0.5rem;
+    }
+    
+    .header_nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+
+        li {
+            list-style: none;
+
+            .user__wrap {
+                display: flex;
+                margin-top: .25rem;
+                justify-content: center;
+
+                .welcome {
+                    display: none;
+                }
+
+                p {
+                    color: variables.$primary-background-color;
+                    font-size: 15px;
+                    margin-bottom: .1rem;
+                    
+                }
+
+                button {
+                    margin-left: .5rem;
+                    background-color: variables.$primary-element-background-color;
+                    border: none;
+                    color: variables.$primary-background-color;
+                    font-weight: bold;
+                    font-size: 15px;
+    
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: variables.$primary-background-color;
+                font-weight: bold;
+                font-size: 15px;
+                margin: 0 2rem 0 2rem;
+                }
+        }
+    }
+
+    .login__background {
+        background-color: variables.$secondary-background-hover-color;
+        opacity: .8;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100rem;
+        position: absolute;
+    }
+
+    @include tablet {
+        height: 5.5rem;
+
+        .logo {
+            position: static;
+            margin: 1.5rem 0 0 3.5rem;
+            height: 6rem;
+            width: 5rem;
+    
+        }
+
+        .header_nav {
+            justify-content: flex-end;
+            margin-right: 2rem;
+
+            li {
+
+                .user__wrap {
+
+                    .welcome {
+                        display: flex;
+                    }
+                    }
+
+            }
+        }
+    }
+
+    @include desktop {
+        padding: 0 3rem 0 3rem;
+
+        .header_nav {
+
+            li {
+                a {
+                    font-size: 22px;
+                }
+            }
+    
+        }
+    }
+}

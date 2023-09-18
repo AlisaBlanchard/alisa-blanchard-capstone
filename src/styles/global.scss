@@ -1,0 +1,50 @@
+@use './mixins' as *;
+@use './variables';
+
+//Global Styling
+
+* {
+    margin: 0;
+}
+
+.app {
+    background-color: variables.$primary-background-color;
+
+}
+
+h1 {
+    color: variables.$primary-text-color;
+}
+
+h2 {
+    color: variables.$primary-text-color;
+    font-size: 23px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 13px;
+    color: variables.$primary-text-color;
+
+}
+
+
+@include tablet {
+    
+    h1 {
+        color: variables.$primary-text-color;
+    }
+    
+    h2 {
+        color: variables.$primary-text-color;
+    }
+    
+    p {
+        font-size: 13px;
+        color: variables.$primary-text-color;
+    
+    }
+    }

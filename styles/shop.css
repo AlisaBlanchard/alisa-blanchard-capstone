@@ -1,0 +1,69 @@
+.shop {
+  background-color: #faf9e9;
+}
+.shop .hero {
+  margin-bottom: 1rem;
+  position: relative;
+  height: 12rem;
+}
+.shop .hero img {
+  height: 100%;
+  width: 100%;
+}
+.shop .hero .hero__text {
+  position: absolute;
+  top: 6rem;
+  margin: 0 1rem;
+  text-align: left;
+}
+.shop .hero .hero__text h1 {
+  color: #faf9e9;
+  text-align: left;
+}
+.shop .hero .hero__text p {
+  color: #faf9e9;
+  margin-top: 0.5rem;
+}
+.shop .merch {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 2px solid #231b10;
+  margin: 0 1rem 0 1rem;
+}
+.shop .merch .card {
+  display: flex;
+  background-color: #978f47;
+  height: 12rem;
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .shop .hero {
+    height: 25rem;
+  }
+  .shop .hero h1 {
+    margin-left: 5.5rem;
+  }
+  .shop .hero p {
+    text-align: left;
+    margin-left: 5.5rem;
+  }
+  .shop .merch {
+    margin: 0 3rem 0 3rem;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shop .hero .hero__text p {
+    text-align: left;
+    margin-left: 5.5rem;
+  }
+  .shop .merch {
+    margin: 0 5rem 0 5rem;
+  }
+}/*# sourceMappingURL=shop.css.map */

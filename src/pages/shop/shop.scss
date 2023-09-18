@@ -1,0 +1,101 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Shop Styling
+
+.shop {
+    background-color: variables.$primary-background-color;
+
+    .hero {
+        margin-bottom: 1rem;
+        position: relative;
+        height: 12rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero__text {
+            position: absolute;
+            top: 6rem;
+            margin: 0 1rem;
+            text-align: left;
+
+
+            h1 {
+                color: variables.$primary-background-color;
+                text-align: left;
+            }
+    
+            p {
+                color: variables.$primary-background-color;
+                margin-top: .5rem;
+            }
+            }
+
+    }
+
+    .merch {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        padding-top: 1rem;
+        border-top: 2px solid variables.$primary-text-color;
+        margin: 0 1rem 0 1rem;
+
+        .card {
+            display: flex;
+            background-color: variables.$primary-element-background-color;
+            height: 12rem;
+            width: 10rem;
+            margin-bottom: 2rem;
+        }
+    }
+    @include tablet {
+
+        .hero {
+            height: 25rem;
+            
+            h1 {
+                margin-left: 5.5rem;
+                
+            }
+    
+            p {
+                text-align: left;
+                margin-left: 5.5rem;
+            }
+        }
+    
+        .merch {
+            margin: 0 3rem 0 3rem;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: 2rem;
+        }
+    }
+    
+
+    @include desktop {
+
+        .hero {
+            
+            .hero__text {
+        
+                p {
+                    text-align: left;
+                    margin-left: 5.5rem;
+                }
+            }
+        }
+    
+        .merch {
+            margin: 0 5rem 0 5rem;
+
+        }    
+    
+    }
+
+}

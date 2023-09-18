@@ -1,0 +1,84 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables';
+
+//Styling for Tracker Page
+
+.tracker {
+    background-color: variables.$primary-background-color;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    h2 {
+        margin-top: .5rem;
+    }
+
+    .title__wrap {
+        display: flex;
+        text-align: left;
+        margin: 1rem 0;
+        align-self: center;
+
+        h1 {
+            margin: 0 .5rem 0 .5rem;
+        }
+
+        p {
+            font-size: 13px;
+            flex-wrap: wrap;
+            padding-left: .5rem;
+            border-left: 1px solid variables.$primary-text-color;
+        }
+    }
+
+    .tracker__wrap {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        .tracker__cta--wrap {
+            display: flex;
+            margin: 0 1rem;
+
+            .tracker__dropdown {
+
+                select {
+                    padding: .75rem 2rem;
+                    color: variables.$primary-text-color;
+                    background-color: variables.$primary-background-color;
+                    border: 3px solid variables.$primary-element-background-color;
+                    width: 12rem;
+    
+                }
+            }
+    
+            a {
+                text-decoration: none;
+                color: variables.$primary-element-background-color;
+
+            }
+
+            .new__tracker {
+                margin-left: .5rem;
+                font-size: 13px;
+            }
+    
+        }
+
+    }
+
+    @include tablet {
+        justify-content: center;
+
+        .title__wrap {
+
+            p {
+                padding-top: .75rem;
+            }
+        }
+    }
+
+    @include desktop {
+        padding: 2rem 0 4rem 0;
+    }
+}

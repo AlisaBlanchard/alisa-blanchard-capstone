@@ -1,0 +1,4 @@
+OAuth
+
+Client ID: 202998095993-qj92550c2un8c7i5mp399nm73osnmr1e.apps.googleusercontent.com
+Client Secret: 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

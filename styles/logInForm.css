@@ -1,0 +1,36 @@
+.logIn {
+  background-color: #faf9e9;
+  position: absolute;
+  margin: 1rem;
+  padding: 0.5rem 1rem 1.5rem 1rem;
+  top: 5.5rem;
+  border: 2px solid #231b10;
+  text-align: left;
+  z-index: 10;
+}
+.logIn .close__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.logIn form p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.logIn form label {
+  font-size: 13px;
+}
+.logIn form .email {
+  margin-bottom: 0.5rem;
+}
+.logIn form .password {
+  margin-bottom: 0.5rem;
+}
+.logIn form .button__wrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+.logIn form .button__wrap button {
+  margin-top: 0.5rem;
+}/*# sourceMappingURL=logInForm.css.map */
