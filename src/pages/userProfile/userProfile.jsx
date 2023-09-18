@@ -62,10 +62,8 @@ function UserProfile() {
             <div className="user__wrap">
             <h1>{details.username}</h1>
                 <div className="user__info--wrap">
-                    <img src={details.profPic} alt="Profile Picture" className='user__img' />
                     <div className="user__info">
-                        <p>Name: {details.firstName} {details.lastName}</p>
-                        {/* <p>Sessions: {details.tracking_sessions}</p> */}
+                        <p>{details.firstName} {details.lastName}</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +89,9 @@ function UserProfile() {
                         </div>
                     </div>
                  ) : (
-                    <div>Choose a Tracker to Get Started</div>
+                    <div>
+                        <h2>Choose a Tracker to Get Started</h2>
+                    </div>
                 )}
             </div>
         </section>
