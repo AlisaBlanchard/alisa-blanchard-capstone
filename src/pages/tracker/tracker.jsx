@@ -78,7 +78,9 @@ function Tracker() {
                         setTrackerID={setTrackerID}
                     />
                     ) : (
-                        <div>Choose a Tracker to Get Started</div>
+                        <div>
+                        <h2>Choose a Tracker to Get Started</h2>
+                        </div>
                     )
                 }
             </div>
