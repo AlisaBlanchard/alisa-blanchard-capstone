@@ -7,9 +7,6 @@
     background-color: variables.$primary-background-color;
     display: flex;
     flex-direction: column;
-    margin: .5rem;
-    border: 1px solid variables.$primary-text-color;
-    border-radius: 5px;
     padding: .5rem .5rem 1rem .5rem;
 
     a {
@@ -61,7 +58,40 @@
         }
 
         button {
-            margin:1rem 0 0 1.5rem;
+            background-color: variables.$primary-element-background-color;
+            display: flex;
+            color: variables.$primary-background-color;
+            border-radius: 22px;
+            border: none;
+            font-size: 15px;
+            font-weight: bold;
+            align-self: center;
+            padding: .5rem;
+            margin-top: 1rem;
+        }
+    }
+
+    @include tablet {
+        padding: 3rem 3rem;
+    }
+
+    @include desktop {
+        padding: 3rem 15rem;
+
+        h1 {
+            width: 80%;
+        }
+
+        .tracker__name {
+            width: 80%;
+
+            input {
+                margin-left: 3.2rem;
+            }
+        }
+        
+        label {
+            font-size: 20px;
         }
     }
 }
