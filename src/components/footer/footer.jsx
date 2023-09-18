@@ -22,10 +22,6 @@ function Footer() {
     setIcon(changeIcon);
   };
 
-  //Newsletter 
-  //subscribe button click handler
-    //Have logic to make sure it is a valid email 
-
   return (
     <section className="footer">
       <div className="newsletter__wrap">

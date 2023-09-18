@@ -9,7 +9,6 @@ import axios from "axios";
 // Headernav Component
 
 function HeaderNav({user, setUser}) {
-  //Need a logged in version and logged out version
     //State
     const [logInVisibility, setLogInVisibility] = useState(false);
     const [style, setStyle] = useState(false);

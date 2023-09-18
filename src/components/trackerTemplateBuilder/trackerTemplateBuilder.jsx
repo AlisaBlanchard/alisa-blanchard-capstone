@@ -30,9 +30,7 @@ function TrackerTemplateBuilder() {
   const methodOptions = [
     "Input Type",
     "Number",
-    "RangeRadio",
-    "BooleanRadio",
-    "Text",
+    "BooleanRadio"
   ];
 
   //Change handler to handle form submission
