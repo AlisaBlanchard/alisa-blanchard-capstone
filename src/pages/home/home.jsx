@@ -28,7 +28,7 @@ function Home() {
                     <p>Big Problem and not sure where to start?</p>
                     <h2>LifeTracker can help</h2>
                     <p>Many individuals struggle to see the tangible impact of their daily habits and routines on their long-term goals. Life Tracker helps by providing clear, data-driven insights, allowing users to understand how their choices are affecting their progress and make meaningful adjustments for a more successful life.</p>
-                    <button>SIGN UP</button>
+                    <div className='button'>SIGN UP</div>
                 </div>
             </div>
 

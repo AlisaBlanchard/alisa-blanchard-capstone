@@ -14,7 +14,6 @@ function UserDashboard() {
 
   //State
   const [article, setArticle] = useState({});
-  console.log(article);
 
   //GET to retrieve Articles Array 
   useEffect(() => {
@@ -25,7 +24,6 @@ function UserDashboard() {
 
       .then((res) => {
         const {articles} = res.data;
-        // console.log(articles);
 
         const randomArticle = articles[Math.floor(Math.random() * articles.length)];
         setArticle(randomArticle);
