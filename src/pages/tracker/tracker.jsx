@@ -15,11 +15,6 @@ function Tracker() {
     const [trackers, setTrackers] = useState([]);
     const [trackerID, setTrackerID] = useState(trackerId);
 
-
-    // console.log(trackerID);
-    // console.log(userTrackers);
-
-
     //GET to get all trackers by specific user for dropdown selection
     useEffect(() => {
         const URL = "http://localhost:5050";
@@ -61,7 +56,6 @@ function Tracker() {
                     <select name='tracker__dropdown' id='tracker__dropdown' onChange={trackerChangeHandler} >
                         <option value='tracker default'>Pick Your Tracker</option>
                         {trackers.map((tracker) => {
-                            // console.log(trackers);
                             return(
                                     <option value={tracker.tracker_name} id={tracker.trackerId} key={tracker.trackerId}>{tracker.tracker_name}</option>
                             )

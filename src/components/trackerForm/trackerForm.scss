@@ -29,35 +29,37 @@
                 grid-column: 1 / span 2;
                 justify-content: space-between;
                 padding: 0 1rem;
-                
+
 
 
                 h2 {
                     font-size: 22px;
-                    padding-top: .5rem;
+                    padding-top: .4rem;
                 }
 
                 .submit {
                     background-color: variables.$primary-element-background-color;
                     display: flex;
-                    margin: .6rem;
+                    margin: 1.1rem 1rem 1rem 2.75rem;
                     border-radius: 22px;
-                    font-size: 13px;  
+                    font-size: 13px;
+                    font-weight: bold;
                     height: 1.25rem;
+                    padding-top: .15rem;
                 }
             }
 
             .grid__row--wrap {
-                display:flex;
+                display: flex;
                 grid-column: 1 / span 2;
                 justify-content: space-between;
                 padding: 0 1rem;
                 border-top: 2px solid variables.$primary-text-color;
-                
+
 
                 .grid__label {
                     border-right: 2px solid variables.$primary-text-color;
-                    width: 100%;
+                    width: 6rem;
                     text-align: left;
 
                     h3 {
@@ -65,18 +67,24 @@
                         margin: .5rem .5rem .5rem 0;
                     }
                 }
-    
+
                 .grid__input {
                     display: flex;
-                    width: 100%;
-                    padding: .5rem 0 .5rem 1rem;
-                    justify-content: space-around;
+                    padding: .5rem 0 .5rem .5rem;
 
-                    .radio {
-                        
+                    label {
+                        margin: 0.1rem .25rem;
                     }
+
+                    .number__input {
+                        width: 4rem;
+                        text-align: center;
+                        border-radius: 5px;
+                        border: none;
+                    }
+
                 }
-                }
+            }
 
         }
     }
