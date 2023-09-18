@@ -21,20 +21,18 @@ function TrackerForm({ setTrackerID, trackerID }) {
     trackerName: trackerName,
     userId: userId,
     trackerId: trackerId,
-    label: template.map((row) => row.label),
-    method: template.map((row) => row.method),
     // label1: "",
     // method1: "",
-    // value1: "",
+    value1: "",
     // label2: "",
     // method2: "",
-    // value2: "",
+    value2: "",
     // label3: "",
     // method3: "",
-    // value3: "",
+    value3: "",
     // label4: "",
     // method4: "",
-    // value4: "",
+    value4: "",
   });
 
   useEffect(() => {
@@ -89,11 +87,13 @@ function TrackerForm({ setTrackerID, trackerID }) {
 
   //Change handler to handle form changes
   const inputChangeHandler = (e) => {
-    const { id, name, value } = e.target;
+    const { id, name, value, className } = e.target;
     console.log("name:" + name);
     console.log("value:" + value);
-
-    setFormData({ ...formData, [name]: value });
+    console.log("method:" + className);
+    console.log("label:" + id);
+    
+    setFormData({ ...formData, [name]: value, id, className });
   };
 
   return (
@@ -117,26 +117,35 @@ function TrackerForm({ setTrackerID, trackerID }) {
                     <label htmlFor="yes">Yes</label>
                     <input
                       type="radio"
-                      name="value4"
+                      name={"value" + row.row}
                       value={true}
                       onChange={inputChangeHandler}
+                      className={row.method}
+                      id={row.label}
+
                     />
                     <label htmlFor="no">No</label>
                     <input
                       type="radio"
-                      name="value4"
+                      name={"value" + row.row}
                       value={false}
                       onChange={inputChangeHandler}
+                      className={row.method}
+                      id={row.label}
+
+
                     />
                   </div>
                 ) : (
                   <div className="grid__input">
                     <input
                       type="number"
-                      className="number__input"
-                      name="number__input"
+                      name={"value" + row.row}
                       defaultValue={row.value}
+                      id={row.label}
                       onChange={inputChangeHandler}
+                      className="number__input"
+                      placeholder="0"
                     />
                   </div>
                 )}
