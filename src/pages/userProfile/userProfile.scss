@@ -6,12 +6,16 @@
 .userProfile {
     background-color: variables.$primary-background-color;
 
+    h2 {
+        margin-top: .5rem;
+    }
+
     .user__wrap {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin: 0 2rem 0 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
 
         h1 {
             color: variables.$primary-text-color;
@@ -20,15 +24,6 @@
         }
 
         .user__info--wrap {
-
-            .user__img {
-                background-color: variables.$primary-element-background-color;
-                height: 12rem;
-                width: 12rem;
-                align-self: center;
-                border-radius: 5px;
-    
-            }
     
             .user__info {
                 display: flex;
@@ -44,6 +39,8 @@
                     width: 100%;
                     color: variables.$primary-background-color;
                     margin: .5rem;
+                    font-weight: bold;
+                    font-size: 15px;
     
                 }
             }
@@ -68,42 +65,27 @@
             }
         }
 
-        // .data__button {
-        //     margin-top: 1rem;
-        //     padding: .5rem 1rem;
-        //     border-radius: 22px;
-        //     font-weight: bold;
-        //     color: variables.$primary-background-color;
-        //     background-color: variables.$primary-element-background-color;
-        //     text-transform: uppercase;
-        // }
-        
-        // .data__visualizer {
-        //     display: none;
-        // }
+        .data__visualizer {
+            margin-top: 1rem;
+        }
+
     }
     @include tablet {
         .user__wrap {
-    
-            h1 {
-                margin-left: 1.5rem;
-                font-size: 40px;
-            }
+            margin: 0 1rem 0 0.5rem;
 
             .user__info--wrap {
                 display: flex;
-                flex-direction: row-reverse;
+                flex-direction: row;
                 justify-content: space-between;
-                
-                .user__img {
-                    margin: 1rem 2rem 0 0;
-                }
-        
+
+                        
                 .user__info {    
-                    margin: 2rem 1.5rem 0 0;
-                    width: 50%;
+                    margin: 0 0 0 0;
+                    width: 100%;
                     height: 50%;
                     margin-left: 1rem;
+                    text-align: left;
 
 
                     p {
@@ -128,6 +110,7 @@
 
                 .tracker__dropdown {
                     height: 1.5rem;
+                    margin-top: 1rem;
 
                     select {
                         width: 12rem;
@@ -173,24 +156,22 @@
         .user__wrap {
             margin-top:1rem;
     
-            h1 {
-            }
-
             .user__info--wrap {
                 justify-content: space-between;
+                margin-left: 1.5rem;
                 
                 .user__img {
 
                 }
         
                 .user__info {    
-                    margin: 0 1rem 0 1rem;
-                    width: 65%;
-                    height: 12rem;
+                    margin: 0 2rem 0 1rem;
+                    width: 66%;
                     justify-content: center;
 
                     p {
                         margin-left: 2rem;
+                        font-size: 30px;
                     }
                 }
                 }
